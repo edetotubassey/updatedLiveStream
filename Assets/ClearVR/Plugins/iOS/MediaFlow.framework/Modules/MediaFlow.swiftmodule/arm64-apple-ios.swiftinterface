@@ -1,0 +1,2712 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 effective-4.2 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name MediaFlow
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AudioToolbox
+import CoreAudio
+import CoreFoundation
+import CoreGraphics
+import CoreMedia
+import CoreMotion
+import CoreVideo
+import Foundation
+import GLKit
+@_exported import MediaFlow
+import Swift
+import UIKit
+import VideoToolbox
+import _Concurrency
+import _StringProcessing
+import simd
+@objc @_hasMissingDesignatedInitializers public class TMAsyncAction : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TMTelemetryTargetConfigBase : ObjectiveC.NSObject {
+  public var telemetryTargetType: MediaFlow.TMTelemetryTargetTypes? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @objcMembers public class TMStopParameters : ObjectiveC.NSObject {
+  @objc public var isErrorReported: Swift.Bool
+  @objc public var isClearVRCoreAlreadyStopped: Swift.Bool
+  @objc public var isClearVRCoreCrashed: Swift.Bool
+  @objc public init(argIsErrorReported: Swift.Bool = false, argIsClearVRCoreAlreadyStopped: Swift.Bool = false, argIsClearVRCoreCrashed: Swift.Bool = false)
+  @objc deinit
+}
+@objc public enum TMAudioPlaybackEngineTypes : Swift.Int32 {
+  case Unknown = 0
+  case Internal = 1
+  public static func getAudioPlaybackEngineType(argValue: Swift.Int32) -> MediaFlow.TMAudioPlaybackEngineTypes
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMAudioPlaybackEngineTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getAudioPlaybackEngineType(argValue: Swift.Int32) -> MediaFlow.TMAudioPlaybackEngineTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class TMClearVRAsyncRequestResponse : ObjectiveC.NSObject {
+  @objc public var tmClearVRAsyncRequest: MediaFlow.TMClearVRAsyncRequest
+  @objc public var clearVRMessage: MediaFlow.TMClearVRMessage
+  @objc deinit
+}
+extension Swift.String {
+  public var base64Decoded: Swift.String? {
+    get
+  }
+  public var base64Encoded: Swift.String? {
+    get
+  }
+}
+extension Swift.String {
+  public subscript(value: Swift.Int) -> Swift.Character {
+    get
+  }
+}
+extension Swift.String {
+  public subscript(value: Foundation.NSRange) -> Swift.Substring {
+    get
+  }
+}
+extension Swift.String {
+  public subscript(value: Swift.CountableClosedRange<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(value: Swift.CountableRange<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(value: Swift.PartialRangeUpTo<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(value: Swift.PartialRangeThrough<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(value: Swift.PartialRangeFrom<Swift.Int>) -> Swift.Substring {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMTimingParameters : ObjectiveC.NSObject {
+  @objc public var position: Swift.Int64 {
+    @objc get
+  }
+  @objc public var timingType: MediaFlow.TMTimingTypes {
+    @objc get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc convenience public init(positionInMilliseconds: Swift.Int64)
+  @objc public init(positionInMilliseconds: Swift.Int64, timingType: MediaFlow.TMTimingTypes)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TMDRMInfo : ObjectiveC.NSObject {
+  public var clearVRDRMLicenseServerType: MediaFlow.TMClearVRDRMLicenseServerTypes {
+    get
+  }
+  public var url: Swift.String?
+  public var token: Swift.String?
+  public var certificate: Foundation.NSData?
+  public var key: Foundation.NSData?
+  public var caChain: Foundation.NSData?
+  public var password: Swift.String?
+  public var licenseAuthenticationHeaders: [(Swift.String, Swift.String)]?
+  public var licenseAuthenticationQueryStrings: [(Swift.String, Swift.String)]?
+  public var tokenizationHeaders: [(Swift.String, Swift.String)]?
+  public var tokenizationQueryStrings: [(Swift.String, Swift.String)]?
+  public var keyOverrideBase64: Swift.String?
+  public var ivOverrideBase64: Swift.String?
+  public init(argClearVRDRMLicenseServerTypes: MediaFlow.TMClearVRDRMLicenseServerTypes)
+  convenience public init(argClearVRDRMLicenseServerTypes: MediaFlow.TMClearVRDRMLicenseServerTypes, argUrl: Swift.String, argToken: Swift.String?, argCertificate: Foundation.NSData?, argKey: Foundation.NSData?, argCAChain: Foundation.NSData?, argPassword: Swift.String?)
+  @available(*, deprecated, message: "[ClearVR] This constructor will be removed after 31-01-2023. Please use TMDRMInfo(clearVRDRMLicenseServerType:licenseAuthenticationHeaders:licenseAuthenticationQueryStrings:tokenizationHeaders:tokenizationQueryStrings: instead.)")
+  convenience public init(argClearVRDRMLicenseServerTypes: MediaFlow.TMClearVRDRMLicenseServerTypes, argLicenseAuthenticationHeaders: Swift.KeyValuePairs<Swift.String, Swift.String>?, argLicenseAuthenticationQueryStrings: Swift.KeyValuePairs<Swift.String, Swift.String>?, argTokenisationHeaders: Swift.KeyValuePairs<Swift.String, Swift.String>?, argTokenisationQueryStrings: Swift.KeyValuePairs<Swift.String, Swift.String>?)
+  convenience public init(clearVRDRMLicenseServerType: MediaFlow.TMClearVRDRMLicenseServerTypes, licenseAuthenticationHeaders: [(Swift.String, Swift.String)]?, licenseAuthenticationQueryStrings: [(Swift.String, Swift.String)]?, tokenizationHeaders: [(Swift.String, Swift.String)]?, tokenizationQueryStrings: [(Swift.String, Swift.String)]?)
+  @available(*, deprecated, message: "[ClearVR] This constructor will be removed after 31-01-2023. Please use TMDRMInfo(clearVRDRMLicenseServerType:url:token:certificate:key:caChain:password:licenseAuthenticationHeaders:licenseAuthenticationQueryStrings:tokenizationHeaders:tokenizationQueryStrings: instead.)")
+  public init(argClearVRDRMLicenseServerTypes: MediaFlow.TMClearVRDRMLicenseServerTypes, argUrl: Swift.String?, argToken: Swift.String?, argCertificate: Foundation.NSData?, argKey: Foundation.NSData?, argCAChain: Foundation.NSData?, argPassword: Swift.String?, argLicenseAuthenticationHeaders: Swift.KeyValuePairs<Swift.String, Swift.String>?, argLicenseAuthenticationQueryStrings: Swift.KeyValuePairs<Swift.String, Swift.String>?, argTokenisationHeaders: Swift.KeyValuePairs<Swift.String, Swift.String>?, argTokenisationQueryStrings: Swift.KeyValuePairs<Swift.String, Swift.String>?)
+  public init(clearVRDRMLicenseServerType: MediaFlow.TMClearVRDRMLicenseServerTypes, url: Swift.String?, token: Swift.String?, certificate: Foundation.NSData?, key: Foundation.NSData?, caChain: Foundation.NSData?, password: Swift.String?, licenseAuthenticationHeaders: [(Swift.String, Swift.String)]?, licenseAuthenticationQueryStrings: [(Swift.String, Swift.String)]?, tokenizationHeaders: [(Swift.String, Swift.String)]?, tokenizationQueryStrings: [(Swift.String, Swift.String)]?)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public class TMTrackID : ObjectiveC.NSObject {
+  public static func == (lhs: MediaFlow.TMTrackID, rhs: MediaFlow.TMTrackID) -> Swift.Bool
+  public var feedIndex: Swift.Int32 {
+    get
+  }
+  public var trackIndex: Swift.Int32 {
+    get
+  }
+  public init(feedIndex: Swift.Int32, trackIndex: Swift.Int32)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol TMTrackerManagerExternalDelegate : AnyObject {
+  func cbOrientationChanged()
+  func cbOrientationChanged(argViewportAndDisplayObjectPose: MediaFlow.TMViewportAndDisplayObjectPose)
+  func cbCameraVerticalFieldOfViewChanged()
+  func cbCameraVerticalFieldOfViewChanged(argVerticalFieldOfViewInDegree: Swift.Float)
+  func getDeltaY() -> Swift.Float
+  func setDeltaY(argDeltaY: Swift.Float)
+  func getDeltaX() -> Swift.Float
+  func setDeltaX(argDeltaX: Swift.Float)
+  func setVerticalFieldOfViewInDegree(argVerticalFieldOfViewInDegree: Swift.Float)
+  func getVerticalFieldOfViewInDegree() -> Swift.Float
+  func updateSensorMatrix(argSensorMatrix: GLKit.GLKMatrix4)
+  func updateViewDimensions(argDimensions: CoreFoundation.CGRect)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMDisplayObjectMapping : ObjectiveC.NSObject, Foundation.NSCopying {
+  @objc public var displayObjectClassType: MediaFlow.TMDisplayObjectClassTypes {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var displayObjectID: Swift.Int32 {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var feedIndex: Swift.Int32 {
+    @objc get
+    @objc set(value)
+  }
+  @objc public init(argDisplayObjectID: Swift.Int32, argFeedIndex: Swift.Int32, argDisplayObjectClassType: MediaFlow.TMDisplayObjectClassTypes)
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class TMReleasedTextureInfo : ObjectiveC.NSObject, Swift.Comparable {
+  public static func < (lhs: MediaFlow.TMReleasedTextureInfo, rhs: MediaFlow.TMReleasedTextureInfo) -> Swift.Bool
+  public static func > (lhs: MediaFlow.TMReleasedTextureInfo, rhs: MediaFlow.TMReleasedTextureInfo) -> Swift.Bool
+  @objc public var imageBuffer: CoreVideo.CVImageBuffer?
+  @objc public var chromaImageBuffer: CoreVideo.CVImageBuffer?
+  @objc public var textureType: MediaFlow.TMTextureTypes
+  @objc public var colorSpaceStandard: MediaFlow.TMColorSpaceStandards
+  @objc public var textureCropTop: Swift.Int32
+  @objc public var textureCropRight: Swift.Int32
+  @objc public var textureCropLeft: Swift.Int32
+  @objc public var textureCropBottom: Swift.Int32
+  @objc public var textureWidth: Swift.Int32
+  @objc public var textureHeight: Swift.Int32
+  @objc public var bitstreamWidth: Swift.Int32
+  @objc public var bitstreamHeight: Swift.Int32
+  @objc public var discontinuityCounter: Swift.UInt64
+  @objc public var rtsInMicroseconds: Swift.Int64
+  @objc public var ctsInMicroseconds: Swift.Int64
+  public init(imageBuffer: CoreVideo.CVImageBuffer, rtsInMicroseconds: Swift.Int64, ctsInMicroseconds: Swift.Int64, argDimensions: CoreFoundation.CGSize, argDiscontinuityCounter: Swift.UInt64)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum TMInitializeFlags : Swift.Int64 {
+  case None = 0x0000000000000000
+  case NoCachePrewarming = 0x0000000000000001
+  public init?(rawValue: Swift.Int64)
+  public typealias RawValue = Swift.Int64
+  public var rawValue: Swift.Int64 {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class TMTelemetryTarget : ObjectiveC.NSObject {
+  public var telemetryIPSignallingType: MediaFlow.TMTelemetryIPSignallingTypes
+  public var telemetryTargetConfigurations: [MediaFlow.TMTelemetryTargetConfigBase]?
+  public init(telemetryIPSignallingType: MediaFlow.TMTelemetryIPSignallingTypes, telemetryTargetConfigBase: [MediaFlow.TMTelemetryTargetConfigBase]?)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMSeekParameters : ObjectiveC.NSObject {
+  @objc final public let timingParameters: MediaFlow.TMTimingParameters?
+  @objc final public let transitionType: MediaFlow.TMTransitionTypes
+  @objc @available(swift, obsoleted: 4.0, message: "This constructor is obsoleted and replaced by init(TimingParameters, TransitionTypes).")
+  convenience public init(newPositionInMilliseconds: Swift.Int64, argFlags: Swift.Int64)
+  @objc public init(timingParameters: MediaFlow.TMTimingParameters? = nil, transitionType: MediaFlow.TMTransitionTypes = .Fast)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMPopulateMediaInfoParameters : ObjectiveC.NSObject {
+  @objc public init(argContentItem: MediaFlow.TMContentItem)
+  @objc deinit
+}
+@objc public protocol TMRendererFrameDelegate {
+  @objc func cbRendererFrameByteArrayAvailable(argRendererFrame: Foundation.NSData, argSizeInBytes: Swift.Int)
+}
+@objc public enum TMVideoCodecTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case unspecified = 0
+  case h264 = 1
+  case h265 = 2
+  case av1 = 3
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public class TMTelemetryUpdateTargetCustomData : ObjectiveC.NSObject {
+  public var telemetryTargetIndex: Swift.Int32
+  public var customDatas: [(Swift.String, Swift.String)]
+  public init(telemetryTargetIndex: Swift.Int32, customDatas: [(Swift.String, Swift.String)])
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum TMAudioFocusChangedHandlingTypes : Swift.Int32 {
+  case Recommended = 0
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMClearVRMessageTypes : Swift.Int32, Swift.CaseIterable, Swift.CustomStringConvertible {
+  case NotSpecified = -1
+  case FatalError = 0
+  case Warning = 1
+  case Info = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias AllCases = [MediaFlow.TMClearVRMessageTypes]
+  public typealias RawValue = Swift.Int32
+  public static var allCases: [MediaFlow.TMClearVRMessageTypes] {
+    get
+  }
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMContentFormat : Swift.Int32, Swift.RawRepresentable {
+  case Unknown = 0
+  case MonoscopicERP180 = 2
+  case MonoscopicERP360 = 8
+  case StereoscopicERP180SBS = 10
+  case StereoscopicERP360TB = 12
+  case Planar = 13
+  case MonoscopicRectilinear = 14
+  case StereoscopicRectilinearTB = 15
+  case MonoscopicFishEye = 16
+  case StereoscopicFishEyeSBS = 17
+  case StereoscopicRectilinearSBS = 18
+  case MonoscopicOmnidirectional = 19
+  case StereoscopicOmnidirectional = 20
+  public typealias RawValue = Swift.String
+  public var rawValue: MediaFlow.TMContentFormat.RawValue {
+    get
+  }
+  public init(rawValue: MediaFlow.TMContentFormat.RawValue)
+  public var isSupported: Swift.Bool {
+    get
+  }
+  public var isStereoscopic: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, renamed: "isSupported")
+  public func getIsSupported() -> Swift.Bool
+  public static func convertInternalProjectionTypeToContentFormat(argFeedProjectionType: MediaFlow.TMProjectionTypes) -> MediaFlow.TMContentFormat
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the initializer through rawValue.")
+  public static func fromMediaProjectionType(argMediaProjectionType: Swift.String) -> MediaFlow.TMContentFormat
+}
+@objc public enum TMColorSpaceStandards : Swift.Int32, Swift.CustomStringConvertible {
+  case Unspecified = 0
+  case BT709 = 1
+  case BT601 = 2
+  case BT2020_NCL = 3
+  case BT2020_CL = 4
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class TMSyncStatus : ObjectiveC.NSObject {
+  public var clientLatency: Swift.Int32 {
+    get
+  }
+  public var maxTargetLag: Swift.Int32 {
+    get
+  }
+  public var maxPlaybackRate: Swift.Float {
+    get
+  }
+  public var minPlaybackRate: Swift.Float {
+    get
+  }
+  public var maxPlaybackRateChange: Swift.Float {
+    get
+  }
+  public var syncState: MediaFlow.TMSyncStates {
+    get
+  }
+  public var playbackRate: Swift.Double {
+    get
+  }
+  public var ntpTime: Swift.Int64 {
+    get
+  }
+  public var targetTime: Swift.Int64 {
+    get
+  }
+  public var actualTime: Swift.Int64 {
+    get
+  }
+  public var targetLag: Swift.Int32 {
+    get
+  }
+  public var syncEdgeLatency: Swift.Int32 {
+    get
+  }
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the clientLatency field.")
+  public func getClientLatency() -> Swift.Int32
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the maxTargetLag field.")
+  public func getMaxTargetLag() -> Swift.Int32
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the maxPlaybackRate field.")
+  public func getMaxPlaybackRate() -> Swift.Float
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the minPlaybackRate field.")
+  public func getMinPlaybackRate() -> Swift.Float
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the maxPlaybackRateChange field.")
+  public func getMaxPlaybackRateChange() -> Swift.Float
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the syncState field.")
+  public func getSyncState() -> MediaFlow.TMSyncStates
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the playbackRate field.")
+  public func getPlaybackRate() -> Swift.Double
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the ntpTime field.")
+  public func getNTPTime() -> Swift.Int64
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the targetTime field.")
+  public func getTargetTime() -> Swift.Int64
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the actualTime field.")
+  public func getActualTime() -> Swift.Int64
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the targetLag field.")
+  public func getTargetLag() -> Swift.Int32
+  @available(swift, obsoleted: 1.0, message: "This method is obsolete and can no longer be used. Please update your code to use the syncEdgeLatency field.")
+  public func getSyncEdgeLatency() -> Swift.Int32
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TMTelemetryConfiguration : ObjectiveC.NSObject {
+  public var disableTiledmediaTelemetry: Swift.Bool
+  public var disableTiledmediaTelemetryToNewRelic: Swift.Bool
+  public var telemetryTargets: [MediaFlow.TMTelemetryTarget]?
+  public init(telemetryTargets: [MediaFlow.TMTelemetryTarget]?, disableTiledmediaTelemetry: Swift.Bool = false)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public class TMTelemetryTargetConfigNewRelic : MediaFlow.TMTelemetryTargetConfigBase {
+  public var accountID: Swift.String
+  public var license: Swift.String
+  public var url: Swift.String
+  public init(accountID: Swift.String, license: Swift.String, url: Swift.String)
+  override public var telemetryTargetType: MediaFlow.TMTelemetryTargetTypes? {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMInitializeParameters : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public init(argDeviceParameters: MediaFlow.TMDeviceParameters, argHttpProxyParams: MediaFlow.TMClearVRProxyParameters, argHttpsProxyParams: MediaFlow.TMClearVRProxyParameters, argOverrideUserAgent: Swift.String, argMuteState: Swift.Float, argAllowDecoderContraintsInducedStereoToMono: Swift.Bool, argSDKType: MediaFlow.TMSDKTypes, argTelemetryConfiguration: MediaFlow.TMTelemetryConfiguration?)
+  @objc deinit
+}
+public enum TMClearVRMeshTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case Unknown
+  case Cubemap
+  case Planar
+  case Cubemap180
+  case ERP
+  case ERP180
+  case Rectilinear
+  case FishEye
+  public var isOmnidirectional: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, renamed: "isOmnidirectional")
+  public func getIsOmnidirectional() -> Swift.Bool
+  public var isPlanar: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, renamed: "isPlanar")
+  public func getIsPlanar() -> Swift.Bool
+  public var isRectilinear: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, renamed: "isRectilinear")
+  public func getIsRectilinear() -> Swift.Bool
+  public func getAsInteractionMode() -> MediaFlow.TMInteractionModes
+  public static func getClearVRMeshType(argValue: Swift.Int32) -> MediaFlow.TMClearVRMeshTypes
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public class TMIntervalTracker : ObjectiveC.NSObject {
+  public init(argAverageNumberOfSamples: Swift.Int)
+  public func addTick()
+  public func addTick(argDelta: Swift.Int64)
+  public var standardDeviationInMilliseconds: Swift.Double {
+    get
+  }
+  public func getStandardDeviationInMilliseconds(argMeanInMilliseconds: Swift.Double) -> Swift.Double
+  public var meanInMilliseconds: Swift.Double {
+    get
+  }
+  public var meanAndStandardDeviationAsPrettyString: Swift.String {
+    get
+  }
+  public var meanAndStddevInMilliseconds: (Swift.Double, Swift.Double) {
+    get
+  }
+  public var prettyPrintInterval: Swift.String {
+    get
+  }
+  public func getPrettyPrintInterval(argDecimals: Swift.Int) -> Swift.String
+  public var intervalOnlyIfIntervalHasPassed: Swift.Double {
+    get
+  }
+  public func prettyPrintIntervalOnlyIfIntervalHasPassed()
+  public func getPrettyPrintIntervalOnlyIfIntervalHasPassed(argDecimals: Swift.Int) -> Swift.String?
+  public func reset()
+  @objc deinit
+}
+@objc public enum TMTextureTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case RGBA = 0
+  case NV12 = 1
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class TMFishEyeSettings : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @available(*, deprecated, message: "TMFishEyeCameraAndLensTypes has been obseleted to make place for the updated TMFisheyePresets. Please use the new constructor using this enum now.")
+  @objc public init(argFishEyeCameraAndLensType: MediaFlow.TMFishEyeCameraAndLensTypes, argFishEyeLensType: MediaFlow.TMFishEyeLensTypes, argFocalLength: Swift.Float, argSensorPixelDensity: Swift.Float, argReferenceWidth: Swift.Int32, argReferenceHeight: Swift.Int32)
+  @objc public init(fisheyePreset: MediaFlow.TMFisheyePresets, FisheyeLensType: MediaFlow.TMFishEyeLensTypes, focalLength: Swift.Float, sensorPixelDensity: Swift.Float, referenceWidth: Swift.Int32, referenceHeight: Swift.Int32)
+  public func copy() -> MediaFlow.TMFishEyeSettings
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TMVector3 : MediaFlow.TMObservable {
+  public var x: Swift.Double {
+    get
+    set
+  }
+  public var y: Swift.Double {
+    get
+    set
+  }
+  public var z: Swift.Double {
+    get
+    set
+  }
+  @objc override convenience dynamic public init()
+  public init(argX: Swift.Double, argY: Swift.Double, argZ: Swift.Double)
+  public func fromEulerZYX() -> MediaFlow.TMQuaternion
+  public func multiply(argValue: Swift.Double) -> MediaFlow.TMVector3
+  public var magnitude: Swift.Double {
+    get
+  }
+  public func subtract(argOtherVector: MediaFlow.TMVector3) -> MediaFlow.TMVector3
+  public func add(argOtherVector: MediaFlow.TMVector3) -> MediaFlow.TMVector3
+  public func divide(argValue: MediaFlow.TMVector3) -> MediaFlow.TMVector3
+  public static func getMin(lhs: MediaFlow.TMVector3, rhs: MediaFlow.TMVector3) -> MediaFlow.TMVector3
+  public static func getMax(lhs: MediaFlow.TMVector3, rhs: MediaFlow.TMVector3) -> MediaFlow.TMVector3
+  public func clamp01() -> MediaFlow.TMVector3
+  public func toScale() -> MediaFlow.TMScale
+  public static func lerp(a: MediaFlow.TMVector3, b: MediaFlow.TMVector3, t: Swift.Float) -> MediaFlow.TMVector3
+  public static func lerp(a: MediaFlow.TMVector3, b: MediaFlow.TMVector3, t: Swift.Double) -> MediaFlow.TMVector3
+  public var normalized: MediaFlow.TMVector3 {
+    get
+  }
+  public func almostEqual(argOther: MediaFlow.TMVector3?) -> Swift.Bool
+  public func copy() -> MediaFlow.TMVector3
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@available(*, deprecated, message: "This enum has been deprecated and will be removed after 2023/01/31. It has been replaced by the TMFisheyePresets enum.")
+@objc public enum TMFishEyeCameraAndLensTypes : Swift.Int32 {
+  case CustomCameraAndLens
+  case BlackmagicURSAMiniCanon815
+  case ZCamK1ProIzugarMkx22mft
+  case ZCamK2ProIzugarMkx200
+  case RedKomodo6KCanon812
+  case BlackmagicURSA12KCanon8158k169
+  case RedVRaptor8KCanon8158Mm
+  case RedVRaptor8KCanon81510Mm
+  case RedVRaptor8KCanon81513Mm
+  public func getFishEyeCameraAndLensType() -> MediaFlow.TMFishEyeCameraAndLensTypes
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMFishEyeCameraAndLensTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getFishEyeCameraAndLensType(argValue: Swift.Int32) -> MediaFlow.TMFishEyeCameraAndLensTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum TMContentSupportedStatus : Swift.Int32, Swift.CustomStringConvertible {
+  case Unknown = 0
+  case Supported = 1
+  case SupportedAsMonoscopicOnly = 2
+  case NotSupported = 3
+  public func getValue() -> Swift.Int32
+  public static func getContentSupportedStatus(argValue: Swift.Int32) -> MediaFlow.TMContentSupportedStatus
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+public enum TMDisplayObjectDescriptorFlags : Swift.UInt32, Swift.CustomStringConvertible, Swift.CaseIterable {
+  case Unknown
+  case Created
+  case MeshUpdated
+  case MeshChanged
+  case TextureLatched
+  case TextureUpdated
+  case TextureChanged
+  case ActiveStateChanged
+  case FeedIndexChanged
+  case ClassTypeChanged
+  case ShaderParameterChanged
+  case LateVertexUpload
+  case LateTextureLatch
+  public func getValue() -> Swift.UInt32
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.UInt32)
+  public typealias AllCases = [MediaFlow.TMDisplayObjectDescriptorFlags]
+  public typealias RawValue = Swift.UInt32
+  public static var allCases: [MediaFlow.TMDisplayObjectDescriptorFlags] {
+    get
+  }
+  public var rawValue: Swift.UInt32 {
+    get
+  }
+}
+@objc @objcMembers public class TMClearVRProxyParameters : ObjectiveC.NSObject {
+  @objc public var proxyType: MediaFlow.TMClearVRProxyTypes
+  @objc public var host: Swift.String
+  @objc public var port: Swift.Int
+  @objc public var username: Swift.String
+  @objc public var password: Swift.String
+  @objc public init(argProxyType: MediaFlow.TMClearVRProxyTypes)
+  @objc public func updateParameters(argHost: Swift.String, argPort: Swift.Int, argUsername: Swift.String = "<auto>", argPassword: Swift.String = "")
+  @objc public func validate() throws
+  @objc public func getAddress() -> Swift.String
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum TMTransitionTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case Continuous = 0
+  case Fast = 1
+  public static func getTransitionType(argTransitionType: Swift.Int32) -> MediaFlow.TMTransitionTypes
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMTransitionTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getTransitionType(argValue: Swift.Int32) -> MediaFlow.TMTransitionTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class TMClearVREvent : ObjectiveC.NSObject {
+  public var clearVRMessage: MediaFlow.TMClearVRMessage {
+    get
+  }
+  public static func genericOKEvent(clearVREventType: MediaFlow.TMClearVREventTypes, optionalArguments: Swift.Optional<[Any]>) -> MediaFlow.TMClearVREvent
+  public static func genericOKEvent(optionalArguments: Swift.Optional<[Any]>) -> MediaFlow.TMClearVREvent
+  public static func genericWarningEvent(clearVRMessageType: MediaFlow.TMClearVREventTypes, optionalArguments: Swift.Optional<[Any]>) -> MediaFlow.TMClearVREvent
+  public static func requestCanceledWarningEvent(optionalArguments: Swift.Optional<[Any]>) -> MediaFlow.TMClearVREvent
+  public static func genericFatalErrorEvent(clearVRMessageType: MediaFlow.TMClearVREventTypes, optionalArguments: Swift.Optional<[Any]>) -> MediaFlow.TMClearVREvent
+  public init(argClearVREventType: MediaFlow.TMClearVREventTypes, argClearVRMessage: MediaFlow.TMClearVRMessage, argOptionalArguments: Swift.Optional<[Any]>)
+  convenience public init(argClearVREventType: MediaFlow.TMClearVREventTypes, argClearVRMessage: MediaFlow.TMClearVRMessage)
+  convenience public init(argClearVREventType: MediaFlow.TMClearVREventTypes, argClearVRAsyncRequestResponse: MediaFlow.TMClearVRAsyncRequestResponse, argOptionalArguments: Swift.Optional<[Any]>)
+  @available(*, deprecated, renamed: "clearVRMessage")
+  public func getClearVRMessage() -> MediaFlow.TMClearVRMessage
+  @available(*, deprecated, renamed: "eventType")
+  public func getClearVREventType() -> MediaFlow.TMClearVREventTypes
+  @available(*, deprecated, renamed: "arguments")
+  public func getOptionalArguments() -> Swift.Optional<[Any]>
+  @available(*, deprecated, renamed: "isSuccess")
+  public func getIsSuccess() -> Swift.Bool
+  public var eventType: MediaFlow.TMClearVREventTypes {
+    get
+  }
+  public var isSuccess: Swift.Bool {
+    get
+  }
+  public var arguments: Swift.Optional<[Any]> {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public protocol TMClearVRCoreWrapperDelegate {
+  @objc func cbAsyncRequestResponse(argClearVRAsyncRequestResponse: MediaFlow.TMClearVRAsyncRequestResponse)
+  @objc func cbClearVRMessage(argClearVRMessage: MediaFlow.TMClearVRMessage)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMDeviceParameters : ObjectiveC.NSObject {
+  @objc public var deviceType: MediaFlow.TMDeviceTypes {
+    @objc get
+  }
+  @objc public var screenWidth: Swift.Int16 {
+    @objc get
+  }
+  @objc public var screenHeight: Swift.Int16 {
+    @objc get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(deviceType: MediaFlow.TMDeviceTypes, screenDimensions: CoreFoundation.CGRect?)
+  @objc @available(*, deprecated, message: "Please use deviceType instead.")
+  public func getDeviceType() -> MediaFlow.TMDeviceTypes
+  @objc @available(*, deprecated, message: "Please use screenWidth instead.")
+  public func getScreenWidth() -> Swift.Int16
+  @objc @available(*, deprecated, message: "Please use screenHeight instead.")
+  public func getScreenHeight() -> Swift.Int16
+  @objc deinit
+}
+@objc public enum TMDeviceTypes : Swift.Int32, Swift.CaseIterable, Swift.CustomStringConvertible {
+  case AndroidFlat
+  case IOSFlat
+  case AppleTV
+  case PCFlat
+  case AndroidGenericHMD
+  case AndroidGenericCardboard
+  case AndroidGenericDaydream
+  case AndroidMobfishCardboard
+  case AndroidOculusGeneric
+  case AndroidOculusGo
+  case AndroidOculusGearVR
+  case AndroidOculusQuest
+  case AndroidOculusQuest2
+  case AndroidWaveVRGeneric
+  case AndroidPicoVRGeneric
+  case AndroidSkyworthVRGeneric
+  case AndroidGSXRGeneric
+  case IOSGenericHMD
+  case IOSGenericCardboard
+  case IOSMobfishCardboard
+  case PCGenericHMD
+  case PCOculusGeneric
+  case PCOculusRiftDK1
+  case PCOculusRiftDK2
+  case PCOculusRiftCV1
+  case PCOculusRiftS
+  case PCOculusLinkQuest
+  case PCHTCGeneric
+  case PCHTCVive
+  case PCHTCVivePro
+  case PCHTCViveCosmos
+  case PCValveGeneric
+  case PCValveIndex
+  case Tester
+  public var description: Swift.String {
+    get
+  }
+  public func getValue() -> Swift.Int16
+  public var isVRDevice: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, renamed: "isVRDevice")
+  public func getIsVRDevice() -> Swift.Bool
+  public init?(rawValue: Swift.Int32)
+  public typealias AllCases = [MediaFlow.TMDeviceTypes]
+  public typealias RawValue = Swift.Int32
+  public static var allCases: [MediaFlow.TMDeviceTypes] {
+    get
+  }
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMDeviceTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getDeviceTypeByClearVRCoreValue(argValue: Swift.Int32) -> MediaFlow.TMDeviceTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias TMRequestCompletionHandlerClosureType = (MediaFlow.TMClearVRAsyncRequestResponse, Swift.Optional<[Any]>) -> Swift.Void
+public typealias TMAsyncResponseInterface = (MediaFlow.TMClearVRAsyncRequestResponse) -> Swift.Void
+@objc @objcMembers public class TMClearVRCoreWrapper : ObjectiveC.NSObject {
+  @objc public static let TM_DEFAULT_CORE_FRAMERATE: Swift.Float
+  @objc public init(argClearVRCoreWrapperDelegate: any MediaFlow.TMClearVRCoreWrapperDelegate, argRendererFrameDelegate: any MediaFlow.TMRendererFrameDelegate)
+  @objc public static func getClearVRCoreVersion() -> Swift.String
+  @objc public static func getProxyParameters(base64Message: Swift.String) -> Swift.String?
+  @objc public static func testIsContentSupported(argData: Foundation.NSData, argCompletion: @escaping MediaFlow.TMAsyncResponseInterface) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public static func testIsContentSupported(argContentSupportedTesterParameters: MediaFlow.TMContentSupportedTesterParameters, argCompletion: @escaping MediaFlow.TMAsyncResponseInterface) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func initialize(argInitializeParameters: MediaFlow.TMInitializeParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func initialize(argData: Foundation.NSData) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func populateMediaInfo(argPopulateMediaInfoParameters: MediaFlow.TMPopulateMediaInfoParameters) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func populateMediaInfo(argPopulateMediaInfoParameters: MediaFlow.TMPopulateMediaInfoParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func populateMediaInfo(argData: Foundation.NSData) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func prepareContentForPlayout(argData: Foundation.NSData) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func prepareContentForPlayout(argPrepareContentParameters: MediaFlow.TMPrepareContentParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func startPlayout(argStartPlayoutParameters: MediaFlow.TMStartPlayoutParameters) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func startPlayout(argStartPlayoutParameters: MediaFlow.TMStartPlayoutParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func pause(argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func pause() -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func unpause(argTimingParameters: MediaFlow.TMTimingParameters?, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func unpause(argData: Foundation.NSData?) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func seek(argSeekParameters: MediaFlow.TMSeekParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func seek(argData: Foundation.NSData) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func switchContent(argData: Foundation.NSData) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func switchContent(argSwitchContentParameters: MediaFlow.TMSwitchContentParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func callCore(argBase64Message: Swift.String, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func callCore(argBase64Message: Swift.String) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public static func callCore(base64Message: Swift.String, completion: @escaping MediaFlow.TMAsyncResponseInterface) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func callCoreSync(base64Message: Swift.String) -> Swift.String
+  @objc public static func handleCallCoreStaticRequestInspection(argBase64Message: Swift.String) -> Swift.String
+  @objc public static func callCoreStaticSync(base64Message: Swift.String) -> Swift.String
+  @objc public func getTimingReport(argTimingType: MediaFlow.TMTimingTypes) -> Foundation.Data?
+  @objc public func muteAudio() -> Swift.Bool
+  @objc public func unmuteAudio() -> Swift.Bool
+  @objc public func getIsAudioMuted() -> Swift.Bool
+  @objc public func setAudioGain(argGain: Swift.Float)
+  @objc public func getAudioGain() -> Swift.Float
+  @objc public func getMuteState() -> Swift.Float
+  @objc public func setStereoscopicMode(argMonoscopicOrStereoscopicMode: Swift.Bool, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func setStereoscopicMode(argMonoscopicOrStereoscopicMode: Swift.Bool) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public static func signalSDKEventStatic(argSeverity: Swift.Int, argIdentifier: Swift.String, argMessage: Swift.String, argComponent: Swift.Int)
+  @objc public static func clearVRCoreLog(argMsg: Swift.String, argLogComponent: Swift.Int32, argLogLevel: Swift.Int32)
+  @objc public func setParameter(argKey: Swift.String, argValue: Swift.String) throws
+  @objc public static func setParameterStatic(argKey: Swift.String, argValue: Swift.String) throws
+  @objc public func setParameterSafely(argKey: Swift.String, argValue: Swift.String) -> Swift.Bool
+  @objc public func getParameter(argKey: Swift.String) throws -> Swift.String
+  @objc public func getParameterSafely(argKey: Swift.String) -> Swift.String
+  @objc public func getContentParameter(argContentID: Swift.Int32, argKey: Swift.String) throws -> Swift.String
+  @objc public static func getContentParameterStatic(argContentID: Swift.Int32, argKey: Swift.String) throws -> Swift.String
+  @objc public func getContentParameterSafely(argContentID: Swift.Int32, argKey: Swift.String) -> Swift.String
+  @objc public func getArrayParameter(argKey: Swift.String, argIndex: Swift.Int) throws -> Swift.String
+  @objc public func getArrayParameterSafely(argKey: Swift.String, argIndex: Swift.Int) -> Swift.String
+  @objc public func getContentArrayParameter(argContentID: Swift.Int32, argKey: Swift.String, argIndex: Swift.Int) throws -> Swift.String
+  @objc public func getContentArrayParameterSafely(argContentID: Swift.Int32, argKey: Swift.String, argIndex: Swift.Int) -> Swift.String
+  @objc public func getAverageBitrateInKbps() -> Swift.Int32
+  @objc public func stateChanged(_ argNewState: Swift.String?)
+  @objc public func updateTexture(argIndex: Swift.Int) -> MediaFlow.TMReleasedTextureInfo?
+  @objc public func isDecoderAvailable(argIndex: Swift.Int) -> Swift.Bool
+  @objc public func getDeviceAppId() -> Swift.String
+  @objc public func event(_ argEventType: Swift.String?, argEventPayload: Swift.String?)
+  @objc public func fatalErrorCore(_ p0: Swift.String?)
+  @objc public static func registerNRPCallbacks(voidHandle: Swift.Int64) -> Swift.Int16
+  @objc public func stopClearVRCore() -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func stopClearVRCore(argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func stopClearVRCore(argStopParameters: MediaFlow.TMStopParameters) -> MediaFlow.TMClearVRAsyncRequest
+  @objc public func stopClearVRCore(argStopParameters: MediaFlow.TMStopParameters, argOptionalCallbackArguments: Swift.Optional<[Any]>, argCompletion: MediaFlow.TMRequestCompletionHandlerClosureType?)
+  @objc public func sendSensorData(argViewportAndDisplayObjectPose: MediaFlow.TMViewportAndDisplayObjectPose)
+  @objc public func sendSensorData(argViewportPosePositionX: Swift.Double, argViewportPosePositionY: Swift.Double, argViewportPosePositionZ: Swift.Double, argViewportPoseW: Swift.Double, argViewportPoseX: Swift.Double, argViewportPoseY: Swift.Double, argViewportPoseZ: Swift.Double, argDisplayObjectPosePositionX: Swift.Double, argDisplayObjectPosePositionY: Swift.Double, argDisplayObjectPosePositionZ: Swift.Double, argDisplayObjectPoseW: Swift.Double, argDisplayObjectPoseX: Swift.Double, argDisplayObjectPoseY: Swift.Double, argDisplayObjectPoseZ: Swift.Double, argDisplayObjectPoseScaleX: Swift.Double, argDisplayObjectPoseScaleY: Swift.Double, argDisplayObjectPoseScaleZ: Swift.Double)
+  @objc public func forceClearVRCoreCrash()
+  @objc deinit
+}
+@objc public enum TMClearVREventTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case None
+  case StateChangedUninitialized
+  case StateChangedInitializing
+  case StateChangedInitialized
+  case StateChangedPreparingCore
+  case StateChangedCorePrepared
+  case StateChangedPreparingContentForPlayout
+  case StateChangedContentPreparedForPlayout
+  case StateChangedBuffering
+  case StateChangedPlaying
+  case StateChangedPausing
+  case StateChangedPaused
+  case StateChangedSeeking
+  case StateChangedSwitchingContent
+  case StateChangedFinished
+  case StateChangedStopping
+  case StateChangedStopped
+  case ParsingMediaInfo
+  case MediaInfoParsed
+  @available(swift, obsoleted: 1, message: "This ClearVREventType has moved to the DisplayObjectEventTypes.")
+  case RenderModeChanged
+  @available(swift, obsoleted: 1, message: "This ClearVREventType has moved to the DisplayObjectEventTypes.")
+  case FirstFrameRendered
+  case AudioTrackSwitched
+  case ContentSwitched
+  case UnableToInitializePlayer
+  @available(swift, obsoleted: 1, renamed: "SuspendingPlaybackAfterApplicationLostFocus")
+  case SuspendingPlaybackBeforeApplicationPaused
+  case SuspendingPlaybackAfterApplicationLostFocus
+  @available(swift, obsoleted: 1, renamed: "ResumingPlaybackAfterApplicationRegainedFocus")
+  case ResumingPlaybackAfterApplicationPaused
+  case ResumingPlaybackAfterApplicationRegainedFocus
+  case StereoModeSwitched
+  @available(swift, obsoleted: 1, message: "This ClearVREventType has moved to the DisplayObjectEventTypes.")
+  case ContentFormatChanged
+  @available(swift, obsoleted: 1, renamed: "ABRLevelActivated")
+  case ABRSwitch
+  @available(swift, obsoleted: 1, message: "This TMClearVREventType has been removed. Please remove any reference to it from your code. Listen to TMClearVREventType.ActiveTracksChanged to be updated about changes in the active tracks.")
+  case ABRLevelActivated
+  case ActiveTracksChanged
+  case AudioFocusChanged
+  @available(swift, obsoleted: 1, message: "This TMClearVREventType has been removed. Please remove any reference to it from yiur code.")
+  case PrewarmCacheCompleted
+  case CallCoreCompleted
+  case GenericMessage
+  public var description: Swift.String {
+    get
+  }
+  public var stateName: Swift.String? {
+    get
+  }
+  @available(*, deprecated, message: "[ClearVR] This API will be removed after 31-09-2023. Please use the stateName field instead.")
+  public func getStateName() throws -> Swift.String
+  @available(*, deprecated, message: "[ClearVR] This API will be removed after 31-09-2023. Please use the stateName field instead.")
+  public func getIsStateChangedEvent() -> Swift.Bool
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public class TMClearVRDisplayObjectEvent : ObjectiveC.NSObject {
+  public var displayObjectEventType: MediaFlow.TMClearVRDisplayObjectEventTypes {
+    get
+  }
+  public var clearVRMessage: MediaFlow.TMClearVRMessage {
+    get
+  }
+  public static func genericOKEvent(type: MediaFlow.TMClearVRDisplayObjectEventTypes) -> MediaFlow.TMClearVRDisplayObjectEvent
+  public init(argType: MediaFlow.TMClearVRDisplayObjectEventTypes, argClearVRMessage: MediaFlow.TMClearVRMessage)
+  @available(*, deprecated, renamed: "isSuccess")
+  public func getIsSuccess() -> Swift.Bool
+  public var isSuccess: Swift.Bool {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TMAudioTrackInfo : ObjectiveC.NSObject {
+  final public let isActive: Swift.Bool
+  final public let feedIndex: Swift.Int32
+  public var trackIndex: Swift.Int32 {
+    get
+  }
+  public var boundToVideoTrackIndex: Swift.Int32 {
+    get
+  }
+  public var codec: MediaFlow.TMAudioCodecTypes {
+    get
+  }
+  public var sampleRate: Swift.Int32 {
+    get
+  }
+  public var numberOfChannels: Swift.Int32 {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var language: Swift.String {
+    get
+  }
+  public var drmType: MediaFlow.TMDRMTypes {
+    get
+  }
+  public var url: Swift.String {
+    get
+  }
+  public var bitrateInKbps: Swift.Int32 {
+    get
+  }
+  public var trackID: MediaFlow.TMTrackID {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum TMMeshTextureModes : Swift.Int32, Swift.CustomStringConvertible {
+  case unknown = 0
+  case uvshuffling = 1
+  case ovroverlay = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @objcMembers public class TMPrewarmCacheParameters : ObjectiveC.NSObject {
+  @objc public var manifestUrl: Swift.String
+  @objc public var initialPositionInMilliseconds: Swift.Int64
+  @objc public var flags: Swift.Int64
+  @objc public init(argManifestUrl: Swift.String, argInitialPositionInMilliseconds: Swift.Int64, argFlags: Swift.Int64)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TMLayoutParameters : ObjectiveC.NSObject, Foundation.NSCopying {
+  public var name: Swift.String
+  public var displayObjectMappings: [MediaFlow.TMDisplayObjectMapping]
+  public var audioTrackID: MediaFlow.TMTrackID? {
+    get
+    set
+  }
+  public var subtitleTrackID: MediaFlow.TMTrackID? {
+    get
+    set
+  }
+  public var preferredAudioLanguage: Swift.String
+  public var disableFallbackSwitch: Swift.Bool
+  convenience public init(audioTrackID: MediaFlow.TMTrackID? = nil, subtitleTrackID: MediaFlow.TMTrackID? = nil, disableFallbackSwitch: Swift.Bool = false)
+  @objc override dynamic public init()
+  public init(lp: MediaFlow.TMLayoutParameters)
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  public var fullScreenDisplayObjectMapping: MediaFlow.TMDisplayObjectMapping? {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum TMTimingTypes : Swift.Int32, Swift.CaseIterable, Swift.CustomStringConvertible {
+  @available(swift, obsoleted: 1, renamed: "ContentTime")
+  case None = -1
+  case ContentTime = 0
+  case WallclockTime = 1
+  case RelativeTime = 2
+  case Seamless = 3
+  case ScheduledOnDemand = 4
+  case LiveEdge = 5
+  public static func getTimingType(argTimingType: Swift.Int32) -> MediaFlow.TMTimingTypes
+  public var description: Swift.String {
+    get
+  }
+  public static var allCases: [MediaFlow.TMTimingTypes] {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias AllCases = [MediaFlow.TMTimingTypes]
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMTimingTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getTimingType(argValue: Swift.Int32) -> MediaFlow.TMTimingTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum TMClearVRStereoscopicModes : Swift.String {
+  case Unknown
+  case Monoscopic
+  case Stereoscopic
+  public func getValue() -> Swift.String
+  public static func parseStereoscopicModeChangedClearVRMessage(argClearVRMessage: MediaFlow.TMClearVRMessage) -> MediaFlow.TMClearVRStereoscopicModes
+  public static func convertStereoscopicModeAsStringToClearVRStereoscopicMode(argStereoscopicMode: Swift.String) -> MediaFlow.TMClearVRStereoscopicModes
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TMClearVRDisplayObjectEventTypes : Swift.CustomStringConvertible {
+  case None
+  case RenderModeChanged
+  case FirstFrameRendered
+  case ContentFormatChanged
+  case ActiveStateChanged
+  case ClassTypeChanged
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: MediaFlow.TMClearVRDisplayObjectEventTypes, b: MediaFlow.TMClearVRDisplayObjectEventTypes) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol TMSensorFuserExternalDelegate {
+  func cbOrientationChanged()
+  func getDeltaY() -> Swift.Float
+  func setDeltaY(argDeltaY: Swift.Float)
+  func getDeltaX() -> Swift.Float
+  func setDeltaX(argDeltaX: Swift.Float)
+  func reset()
+  func updateSensorMatrix(argSensorMatrix: GLKit.GLKMatrix4)
+}
+extension MediaFlow.TMClearVRProxyTypes : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc public enum TMClearVRProxyTypes : Swift.Int32 {
+  case Unknown = 0
+  case Http = 1
+  case Https = 2
+  public func getAsString() -> Swift.String
+  public static func getClearVRProxyTypeByValue(argValue: Swift.Int32) -> MediaFlow.TMClearVRProxyTypes
+  public static func getClearVRProxyTypeByName(argValue: Swift.String) -> MediaFlow.TMClearVRProxyTypes
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMClearVRProxyTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getClearVRProxyTypeByValue(argValue: Swift.Int32) -> MediaFlow.TMClearVRProxyTypes
+  @objc public static func getClearVRProxyTypeByName(argValue: Swift.String) -> MediaFlow.TMClearVRProxyTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TMHelpers {
+  public typealias TMLoadContentListClosureType = (MediaFlow.TMClearVRMessage, [MediaFlow.TMContentItem]?) -> Swift.Void
+  public typealias TMLoadContentRequestCompletion = (MediaFlow.TMResult<[MediaFlow.TMContentItem], MediaFlow.TMClearVRMessage>) -> Swift.Void
+  public static func readLicenseFile(argFileFullPath: Swift.String = "Resources/license.tml") throws -> Foundation.Data?
+  @available(swift, obsoleted: 1.0, message: "[ClearVR] This API can no longer be used. it has been replaced by loadContentList(String:TMLoadContentListClosureType)")
+  public static func loadContentList(argFilePath: Swift.String, argCompletion: @escaping MediaFlow.TMHelpers.TMLoadContentListClosureType)
+  public static func prettyPrintMilliseconds(argTimeInMilliseconds: Swift.Int64) -> Swift.String
+  public static func boolToString(b: Swift.Bool?) -> Swift.String
+  @available(swift, obsoleted: 1.0, message: "[ClearVR] This method can no longer be used. TMContentItemFromJSON has been forcefully deprecated.")
+  public static func getAsContentItemArray(argContentItemFromJSONS: [MediaFlow.TMContentItem]) -> [MediaFlow.TMContentItem]
+  @objc deinit
+}
+public class TMClearVRMotionOrientationTrackerParameters {
+  convenience public init()
+  public init(argDeviceMotionUpdateInternal: Foundation.TimeInterval, argGyroUpdateInterval: Foundation.TimeInterval, argShowsDeviceMovementDisplay: Swift.Bool)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMStartPlayoutParameters : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TMSubtitleTrackInfo : ObjectiveC.NSObject {
+  final public let isActive: Swift.Bool
+  final public let feedIndex: Swift.Int32
+  public var trackIndex: Swift.Int32 {
+    get
+  }
+  public var boundToVideoTrackIndex: Swift.Int32 {
+    get
+  }
+  public var url: Swift.String {
+    get
+  }
+  public var language: Swift.String {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var trackID: MediaFlow.TMTrackID {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TMObservable : ObjectiveC.NSObject {
+  public func addObserver(_ object: Swift.AnyObject, skipFirst: Swift.Bool = true, closure: @escaping (Swift.AnyObject) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum TMClearVRMessageCodes : Swift.Int32, Swift.CustomStringConvertible {
+  case Unknown = 0
+  case GenericWarning = -2001
+  case GenericFatalError = -2002
+  case SetRenderModeFailed = -2003
+  case APINotSupportedOnThisPlatform = -2004
+  case UnspecifiedFailure = -1000
+  case AlreadyInitialized = -1001
+  case ExceptionFromClearVRCore = -1002
+  case ClearVRCoreNotProperlyInitialized = -1003
+  case ClearVRCoreUnableToParseMediaInfo = -1004
+  case CannotGenerateDeviceAppId = -1005
+  case ContentLoadingTimeout = -1006
+  case ClearVRCoreInitializationTimeout = -1007
+  case InvalidOrUnsupportedProxySettings = -1008
+  case DeviceNotSUpported = -1009
+  case VideoDecoderNotInitialized = -1010
+  case VideoDecoderDecodingFailure = -1011
+  case NoHardwareVideoDecoderAvailable = -1012
+  case VideoDecoderCannotDecodeFrame = -1013
+  case VideoDecoderDoesNotSupportProfileOrLevel = -1014
+  case VideoMimeTypeNotSupportedBySDK = 1015
+  case VideoDecoderCannotConfigureDecoder = -1016
+  case AudioDecoderNotInitialized = -1020
+  case AudioDecoderDecodingFailure = -1021
+  case AudioDecoderCannotDecodeSample = -1022
+  case AudioDecoderFormatNotSupported = -1023
+  case AudioPlaybackEngineNotInitialized = -1030
+  case AudioPlaybackEngineFailure = -1031
+  case VideoDRMGenericError = -1050
+  case VideoDRMSchemeUnsupported = -1051
+  case VideoDRMSessionDeniedByServer = -1052
+  case VideoDRMUnableToProvision = -1053
+  case UnspecifiedWarning = -1100
+  case NonFatalExceptionFromClearVRCore = -1101
+  case SpatialAudioNotSupported = -1102
+  case VideoDecoderInputOverflow = -1103
+  case VideoDecoderOutputOverflow = -1104
+  case InvalidState = -1105
+  case ContentDoesNotSupportSeek = -1106
+  case CannotSwitchAudioTrack = -1107
+  case CannotSwitchContent = -1108
+  case VideoDecoderFrameDropped = -1109
+  case RequestCancelled = -1110
+  case VideoDecoderTooSlow = -1111
+  case VideoDecoderConfigureDecoderThrewWarning = -1112
+  case VideoDecoderFrameWithoutMetadataDropped = -1113
+  case VideoDecoderSlowPriming = -1114
+  case PrepareContentForPlayoutCancelled = -1115
+  case GenericOK = -1200
+  case GenericInfo = -1201
+  case GraphicsBackendVersion = -1202
+  case VideoDecoderCapabilities = -1203
+  case AudioTrackChanged = -1204
+  case StereoscopicModeChanged = -1205
+  case VideoDRMSessionEstablished = -1206
+  case ABRLevelActivated = -1207
+  case SyncStateChanged = -1208
+  case ActiveTracksChanged = -1209
+  case AudioFocusGained = -1210
+  case AudioFocusLost = -1211
+  case Subtitle = -1212
+  case CallApp = -1299
+  case ClearVRCoreStateUninitialized = -1300
+  case ClearVRCoreStateInitializing = -1301
+  case ClearVRCoreStateInitialized = -1302
+  case ClearVRCoreStateRunning = -1303
+  case ClearVRCoreStatePausing = -1304
+  case ClearVRCoreStatePaused = -1305
+  case ClearVRCoreStateBuffering = -1306
+  case ClearVRCoreStateSeeking = -1307
+  case ClearVRCoreStateSwitchingContent = -1308
+  case ClearVRCoreStateFinished = -1309
+  case ClearVRCoreStateStopped = -1310
+  case TestContentSupportedInternalReport = -1400
+  public var description: Swift.String {
+    get
+  }
+  public static func getClearVRMessageCode(argValue: Swift.Int32) -> MediaFlow.TMClearVRMessageCodes
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+extension Foundation.NSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum TMClearVRCoreErrorCodes : Swift.Int32 {
+  case UnknownError = 0
+  case GenericError = -1
+  case InvalidProtoPayload = -2
+  case GenericFatalError = -3
+  case NoClearVRCoreActiveError = -5
+  case ClearVRCoreConfigurationError = -6
+  case ClearVRCoreInstanceAlreadyExistsError = -7
+  case ClearVRCoreInstanceAlreadyInitializedError = -8
+  case ClearVRCoreStateChangeNotAllowed = -10
+  case InterruptedCommand = -13
+  case NoOpCommand = -14
+  case LicenseGenericError = -20
+  case LicenseFileSignatureInvalidError = -21
+  case LicenseSignatureValidationFailedError = -22
+  case LicenseFormatVersionUnsupportedError = -23
+  case LicenseNoneProvided = -24
+  case UnableToObtainSessionLicense = -25
+  case OfflineLicenseInvalid = -26
+  case OfflineLicenseExpired = -27
+  case LicenseQueueOverFlow = -28
+  case InternalIOError = -30
+  case IdentityDetectionError = -31
+  case NetworkError = -40
+  case NetworkTCPConnectionError = -42
+  case NetworkDisconnectError = -43
+  case NetworkContextCancelled = -44
+  case NetworkCorruptData = -45
+  case NetworkHTTPUnknownError = -46
+  case ContentSettingsError = -50
+  case InvalidProjectionOverrideSettings = -51
+  case HardwareDecoderLimitationError = -60
+  case MeasurementOutputError = -70
+  case TileCalculationGenericError = -80
+  case TileAssignmentGenericError = -90
+  case TileAssignmentNoFreeSlotAvailableError = -91
+  case ProtobufOutputError = -100
+  case BinaryOutputError = -101
+  case GoHEVCGenericError = -110
+  case UnknownDecoderLevelError = -111
+  case ManifestGenericError = -120
+  case ManifestInvalidError = -121
+  case InvalidManifestURLError = -122
+  case InvalidURLSchemeError = -123
+  case ManifestNotSupportedError = -124
+  case ContentFormatGenericError = -130
+  case ContentFormatUnsupportedVersionError = -131
+  case ContentFormatUnsupportedProjectionError = -132
+  case ContentFormatInvalid = -133
+  case ContentFormatUnsupportedType = -134
+  case NoSupportedBundlesFound = -135
+  case IndexFormatGenericError = -140
+  case IndexFormatUnsupportedVersionError = -141
+  case InfoStoreGenericError = -142
+  case DataFormatGenericError = -150
+  case DataFormatUnsupportedVersionError = -151
+  case AudioFormatGenericError = -160
+  case AudioFormatUnsupportedAudioFormatError = -161
+  case ParameterGenericError = -170
+  case ParameterKeyDoesntExistError = -171
+  case ParameterSetContainsInvalidValue = -172
+  case ParameterNotInitializedError = -173
+  case ParameterAlreadyInitializedError = -175
+  case ParameterAlreadyRunningError = -176
+  case ParameterIsReadOnlyError = -177
+  case ParameterNoAudioSelectedError = -178
+  case ParameterDoesntSupportIndexingError = -180
+  case ParameterRequiresIndexingError = -181
+  case ParameterInvalidIndexError = -182
+  case ParameterDoesntSupportContentIDError = -183
+  case ParameterInvalidContentIDError = -184
+  case SeekNotAvailable = -190
+  case AudioTrackDoesntExist = -191
+  case ABRLevelDoesntExist = -192
+  case ContentSwitchNotPossible = -193
+  case CannotSwitchToStereoContentRepresentationIsMono = -194
+  case CannotPerformABRSwitchDuringNonRunningState = -195
+  case CannotSwitchToStereoForceMonoEnabled = -196
+  case SubtitleTrackDoesntExist = -197
+  case IllegalFlags = -199
+  case CannotSwitchToStereoInsufficientDecoder = -200
+  case InvalidStatsReport = -210
+  case InteractionNotAvailableDuringLiveEvent = -230
+  case NoDRMStructProvided = -300
+  case InvalidLicenseServerType = -301
+  case UnableToRetrieveLicense = -303
+  case ContentNotProtected = -304
+  case InvalidPEM = -305
+  case DRMSchemesNotSupportedOnDevice = -307
+  case DecryptionError = -308
+  case TestFrameGenericError = -310
+  case UnsupportedTestFrameCodec = -311
+  case UnsupportedTestFrameCodecProfile = -312
+  case UnsupportedTestFrameEncrypted = -313
+  case UnsupportedTestFrameDimensions = -314
+  case SavingPersistence = -320
+  case InvalidPersistencePath = -321
+  case SavingCoreState = -322
+  case LoadingCoreState = -323
+  case TimingUnsupportedValue = -330
+  case TimingWallclockNotSupportedForNonLive = -331
+  case TimingNotAvailableInCurrentState = -332
+  case InvalidSyncSettings = -340
+  case EnableSyncNotAllowed = -341
+  case InvalidPlaybackRate = -342
+  case DecoderCapabilitiesNetworkRetrievalError = -360
+  case DecoderCapabilitiesNotFound = -361
+  case EventManifestGenericError = -370
+  case EventManifestParsingError = -371
+  case EventManifestUnsupportedVersion = -372
+  case NonHomogenousTileSize = -380
+  case InvalidLogicalFeedIdx = -381
+  case UnableToFitRequestedFeedLayoutInDecoder = -382
+  case NetworkHTTP400 = -400
+  case NetworkHTTP401 = -401
+  case NetworkHTTP402 = -402
+  case NetworkHTTP403 = -403
+  case NetworkHTTP404 = -404
+  case NetworkHTTP405 = -405
+  case NetworkHTTP406 = -406
+  case NetworkHTTP407 = -407
+  case NetworkHTTP408 = -408
+  case NetworkHTTP409 = -409
+  case NetworkHTTP410 = -410
+  case NetworkHTTP411 = -411
+  case NetworkHTTP412 = -412
+  case NetworkHTTP4xx = -499
+  case NetworkHTTP500 = -500
+  case NetworkHTTP501 = -501
+  case NetworkHTTP502 = -502
+  case NetworkHTTP503 = -503
+  case NetworkHTTP504 = -504
+  case NetworkHTTP505 = -505
+  case NetworkHTTP506 = -506
+  case NetworkHTTP507 = -507
+  case NetworkHTTP508 = -508
+  case NetworkHTTP509 = -509
+  case NetworkHTTP510 = -510
+  case NetworkHTTP511 = -511
+  case NetworkHTTP5xx = -599
+  case CMSGenericError = -600
+  case CMSBackendUnknown = -601
+  case CMSErrorReadingLocalFile = -602
+  case CMSErrorParsingLocalFile = -603
+  case CMSErrorParsingRawJSON = -604
+  case CMSRequestError = -605
+  case CMSErrorParsingLegacyContentList = -606
+  case CMSErrorParsingContentList = -607
+  case HLSBlockingManifestReloadSegmentTimeout = -710
+  case HLSBlockingManifestReloadUnexpectedMSN = -711
+  case DecoderOverflowModeActivated = -740
+  public func compare(argOtherValue: Swift.Int32) -> Swift.Bool
+  public static func getClearVRCoreErrorCode(argValue: Swift.Int32) -> MediaFlow.TMClearVRCoreErrorCodes
+  public static func getIsClearVRCoreErrorCode(argValue: Swift.Int32) -> Swift.Bool
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class TMScale : ObjectiveC.NSObject {
+  public var x: Swift.Double
+  public var y: Swift.Double
+  public var z: Swift.Double
+  @objc override convenience dynamic public init()
+  public init(argX: Swift.Double, argY: Swift.Double, argZ: Swift.Double)
+  public func multiply(argOther: MediaFlow.TMVector3) -> MediaFlow.TMScale
+  public func multiply(argOther: MediaFlow.TMScale) -> MediaFlow.TMScale
+  public func multiply(argFactor: Swift.Double) -> MediaFlow.TMScale
+  public func copy() -> MediaFlow.TMScale
+  public func divide(argOtherScale: MediaFlow.TMScale) -> MediaFlow.TMScale
+  public func almostEqual(argOtherScale: MediaFlow.TMScale?) -> Swift.Bool
+  @objc override dynamic open func isEqual(_ object: Any?) -> Swift.Bool
+  public var asVector3: MediaFlow.TMVector3 {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol TMClearVRViewExternalSimpleMappingDelegate : AnyObject {
+  var targetFeedIndex: Swift.Int32? { get set }
+  var targetDisplayObjectClassType: MediaFlow.TMDisplayObjectClassTypes { get set }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMContentItem : ObjectiveC.NSObject {
+  @objc public var contentSupportedStatus: MediaFlow.TMContentSupportedStatus
+  @objc public var url: Swift.String {
+    @objc get
+  }
+  @objc public var drmInfo: MediaFlow.TMDRMInfo? {
+    @objc get
+    @objc set
+  }
+  @objc public var overrideContentFormat: MediaFlow.TMContentFormat {
+    @objc get
+    @objc set
+  }
+  @objc public var fishEyeSettings: MediaFlow.TMFishEyeSettings? {
+    @objc get
+    @objc set
+  }
+  @objc public init(url: Swift.String)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor has been removed in v10. Use the init(string) constructor, and set the other fields of interest manually.")
+  convenience public init(argUrl: Swift.String, argDRMInfo: MediaFlow.TMDRMInfo)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor has been removed in v8.0. You can no longer specify the start position on the ContentItem. Please remove the argStartPositionInMilliseconds argument.")
+  convenience public init(argUrl: Swift.String, argViewportAndDisplayObjectPose: MediaFlow.TMViewportAndDisplayObjectPose, argStartPositionInMilliseconds: Swift.Int64)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor has been removed in v8.0. You can no longer specify the start position on the ContentItem. Please remove the argStartPositionInMilliseconds argument.")
+  convenience public init(argUrl: Swift.String, argViewportAndDisplayObjectPose: MediaFlow.TMViewportAndDisplayObjectPose, argStartPositionInMilliseconds: Swift.Int64, argDRMInfo: MediaFlow.TMDRMInfo?)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor has been removed in v8.0. You can no longer specify the start position on the ContentItem. Please remove the argStartPositionInMilliseconds argument.")
+  convenience public init(argUrl: Swift.String, argViewportAndDisplayObjectPose: MediaFlow.TMViewportAndDisplayObjectPose, argStartPositionInMilliseconds: Swift.Int64, argDRMInfo: MediaFlow.TMDRMInfo?, argOverrideContentFormat: MediaFlow.TMContentFormat, argFishEyeSettings: MediaFlow.TMFishEyeSettings? = nil, argApproximateDistanceFromLiveEdgeInMilliseconds: Swift.Int64 = 0)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor has been removed in v10. Use the init(string) constructor, and set the other fields of interest manually.")
+  convenience public init(argUrl: Swift.String, argViewportAndDisplayObjectPose: MediaFlow.TMViewportAndDisplayObjectPose?, argDRMInfo: MediaFlow.TMDRMInfo?, argOverrideContentFormat: MediaFlow.TMContentFormat, argFishEyeSettings: MediaFlow.TMFishEyeSettings? = nil)
+  @objc @available(*, deprecated, message: "Please use url instead.")
+  public func getUrl() -> Swift.String
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc @available(swift, obsoleted: 1.0, message: "This method has been removed in v8.0. You can no longer specify the start position on the ContentItem.")
+  public func getStartPositionInMilliseconds() -> Swift.Int64
+  @objc @available(*, deprecated, message: "Please use contentSupportedStatus instead.")
+  public func getContentSupportedStatus() -> MediaFlow.TMContentSupportedStatus
+  @objc @available(swift, obsoleted: 1.0, message: "This method has been removed and can no longer be used as you cannot specify the playback start position on the TMCOntentItem anymore.")
+  public func clone(argStartPositionInMilliseconds: Swift.Int64) -> MediaFlow.TMContentItem
+  @objc deinit
+}
+public enum TMSyncStates : Swift.Int32, Swift.CustomStringConvertible {
+  case Disabled
+  case Syncing
+  case InSync
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public class TMVideoDecoderCapabilities : ObjectiveC.NSObject {
+  public var videoDecoderName: Swift.String {
+    get
+  }
+  public var maximumVideoLevelSupportedByDecoder: Swift.String {
+    get
+  }
+  public var maximumVideoLevelSupportedBySdk: Swift.String {
+    get
+  }
+  public var maximumVideoLevelSupportedByDecoderAndSdk: Swift.String {
+    get
+  }
+  public var mimetype: Swift.String {
+    get
+  }
+  public init(argVideoDecoderName: Swift.String, argMimetype: Swift.String, argMaximumVideoLevelSupportedByDecoder: Swift.String, argMaximumVideoLevelSupportedBySdk: Swift.String, argMaximumVideoLevelSupportedByDecoderAndSdk: Swift.String)
+  @available(*, deprecated, message: "Please use videoDecoderName instead.")
+  public func getVideoDecoderName() -> Swift.String
+  @available(*, deprecated, message: "Please use maximumVideoLevelSupportedByDecoder instead.")
+  public func getMaximumVideoLevelSupportedByDecoder() -> Swift.String
+  @available(*, deprecated, message: "Please use maximumVideoLevelSupportedByDecoderAndSdk instead.")
+  public func getMaximumVideoLevelSupportedByDecoderAndSdk() -> Swift.String
+  @available(*, deprecated, message: "Please use maximumVideoLevelSupportedBySdk instead.")
+  public func getMaximumVideoLevelSupportedBySdk() -> Swift.String
+  @available(*, deprecated, message: "Please use mimetype instead.")
+  public func getMimetype() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TMDeviceAppIdGenerator {
+  public static func applicationPackageName() -> Swift.String
+  public static func getSHA256DeviceAppId() -> Swift.String
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMContentSupportedTesterParameters : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc convenience public init(argContentItems: [MediaFlow.TMContentItem], argDeviceType: MediaFlow.TMDeviceTypes, argWidth: Swift.Int16, argHeight: Swift.Int16, argOverrideUserAgent: Swift.String)
+  @objc @available(*, deprecated, message: "Please use init([TMContentItem], TMDeviceParameters) instead.")
+  convenience public init(argContentItems: [MediaFlow.TMContentItem], argDeviceType: MediaFlow.TMDeviceTypes, argDisplayDimensions: CoreFoundation.CGRect)
+  @objc convenience public init(argContentItems: [MediaFlow.TMContentItem], argDeviceType: MediaFlow.TMDeviceTypes)
+  @objc convenience public init(argContentItems: [MediaFlow.TMContentItem], argDeviceParameters: MediaFlow.TMDeviceParameters)
+  @objc public init(argContentItems: [MediaFlow.TMContentItem], argDeviceParameters: MediaFlow.TMDeviceParameters, argOverrideUserAgent: Swift.String, argAllowDecoderContraintsInducedStereoToMono: Swift.Bool)
+  @objc deinit
+}
+@objc @available(swift, obsoleted: 1.0, message: "[ClearVR] This class can no longer be used, please use TMFishEyeSettings instead.")
+public class TMFishEyeSettingsFromJSON : ObjectiveC.NSObject {
+  final public let fishEyeCameraAndLensType: Swift.Int32
+  final public let fishEyeLensType: Swift.Int32
+  final public let focalLength: Swift.Float
+  final public let sensorPixelDensity: Swift.Float
+  final public let referenceWidth: Swift.Int32
+  final public let referenceHeight: Swift.Int32
+  public init(argFishEyeCameraAndLensType: Swift.Int32, argFishEyeLensType: Swift.Int32, argFocalLength: Swift.Float, argSensorPixelDensity: Swift.Float, argReferenceWidth: Swift.Int32, argReferenceHeight: Swift.Int32)
+  @available(swift, obsoleted: 1.0, message: "[ClearVR] This method can no longer be used, because TMFishEyeSettingsFromJSON has been forcefully deprecated.")
+  public func copy()
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public enum TMRenderModes : Swift.Int32, Swift.CustomStringConvertible {
+  case Native
+  case Monoscopic
+  case Stereoscopic
+  case ForcedMonoscopic
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMApplicationFocusAndPauseHandlingTypes : Swift.Int32 {
+  case Legacy = 0
+  case Recommended = 1
+  case Disabled = 2
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@frozen public enum TMResult<Success, Failure> {
+  case success(Success)
+  case failure(Failure)
+}
+@objc public class TMInteractionModeConfiguration : ObjectiveC.NSObject {
+  public init(configurations: Any...)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class TMSyncSettings : ObjectiveC.NSObject {
+  @objc convenience override dynamic public init()
+  public init(argClientLatency: Swift.Int32, argMaxTargetLag: Swift.Int32, argMaxPlaybackRate: Swift.Float, argMinPlaybackRate: Swift.Float, argMaxPlaybackRateChange: Swift.Float, argDisableInitialSeek: Swift.Bool = false, syncMode: MediaFlow.TMSyncModes = .PlaybackRate)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum TMNRPColorSpaces : Swift.Int32 {
+  case Uninitialized = 0
+  case Gamma = 1
+  case Linear = 2
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TMSyncStateChanged {
+  public static func parseSyncStatusMessageToSyncStateChanged(argProtoSyncStatusMessageBase64: Swift.String) -> MediaFlow.TMSyncStateChanged?
+  public func getSyncState() -> MediaFlow.TMSyncStates
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TMLogger {
+  public static func writeToLogDebug(component: Swift.String, message: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TMScreenLocker {
+  public static func getIsScreenLocked(argUserDefaults: Foundation.UserDefaults) -> Swift.Bool
+  public static func toggleScreenOrientationLock(argUserDefaults: Foundation.UserDefaults, lock: Swift.Bool) -> UIKit.UIInterfaceOrientationMask
+  public static func restoreScreenLock(argUserDefaults: Foundation.UserDefaults) -> UIKit.UIInterfaceOrientationMask
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TMFeedInfo : ObjectiveC.NSObject {
+  public var videoTracks: [MediaFlow.TMVideoTrackInfo] {
+    get
+  }
+  public var audioTracks: [MediaFlow.TMAudioTrackInfo] {
+    get
+  }
+  public var subtitleTracks: [MediaFlow.TMSubtitleTrackInfo] {
+    get
+  }
+  public var url: Swift.String {
+    get
+  }
+  public var feedIndex: Swift.Int32? {
+    get
+  }
+  public var activeVideoTracks: [MediaFlow.TMVideoTrackInfo]? {
+    get
+  }
+  public var activeAudioTrack: MediaFlow.TMAudioTrackInfo? {
+    get
+  }
+  public var activeSubtitleTrack: MediaFlow.TMSubtitleTrackInfo? {
+    get
+  }
+  public var selectableAudioTrackIDs: [MediaFlow.TMTrackID] {
+    get
+  }
+  @available(*, deprecated, renamed: "getActiveVideoTrack")
+  public func getActiveVideoTracks() -> [MediaFlow.TMVideoTrackInfo]
+  public func getActiveVideoTrack() -> MediaFlow.TMVideoTrackInfo?
+  public func getActiveAudioTrack() -> MediaFlow.TMAudioTrackInfo?
+  public func getActiveSubtitleTrack() -> MediaFlow.TMSubtitleTrackInfo?
+  public func getSelectableAudioTrackIDs() -> [MediaFlow.TMTrackID]
+  public func getSelectableAudioTracks() -> [MediaFlow.TMAudioTrackInfo]
+  public func getSelectableSubtitlesTrackIDs() -> [MediaFlow.TMTrackID]
+  public func getSelectableSubtitlesTracks() -> [MediaFlow.TMSubtitleTrackInfo]
+  public var numberOfVideoTracks: Swift.Int {
+    get
+  }
+  public var numberOfAudioTracks: Swift.Int {
+    get
+  }
+  public var numberOfSubtitleTracks: Swift.Int {
+    get
+  }
+  public func getNumberOfSelectableAudioTracks() -> Swift.Int
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol TMPerformanceDelegate : AnyObject {
+  var averageBitrateInMbps: Swift.Float { get }
+  var clearVRCoreWrapperStatistics: MediaFlow.TMClearVRCoreWrapperStatistics? { get }
+  var simpleStatisticsAsPrettyString: Swift.String { get }
+}
+public let TM_AUDIO_MAINTAIN_GAIN: Swift.Float
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMAudioTrackAndPlaybackParameters : ObjectiveC.NSObject {
+  @objc public var audioTrackIndex: Swift.Int32 {
+    @objc get
+  }
+  @objc public var audioDecoderType: MediaFlow.TMAudioDecoderTypes {
+    @objc get
+  }
+  @objc public var audioPlaybackEngineType: MediaFlow.TMAudioPlaybackEngineTypes {
+    @objc get
+  }
+  @objc public var contentID: Swift.Int32 {
+    @objc get
+  }
+  @objc public var estimatedPlaybackLatency: Swift.Int64 {
+    @objc get
+  }
+  @objc public var audioGain: Swift.Float {
+    @objc get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc convenience public init(argAudioTrackIndex: Swift.Int32, argAudioDecoderType: MediaFlow.TMAudioDecoderTypes, argAudioPlaybackEngineType: MediaFlow.TMAudioPlaybackEngineTypes, argAudioGain: Swift.Float = TM_AUDIO_MAINTAIN_GAIN)
+  @objc convenience public init(argAudioTrackIndex: Swift.Int32)
+  @objc public static func getDefault() -> MediaFlow.TMAudioTrackAndPlaybackParameters
+  @objc public func toCoreProtobuf(argAudioGain: Swift.Float, argEstimatedPlaybackLatencyInNanoseconds: Swift.Int64) -> Swift.String
+  @objc @available(*, deprecated, message: "Please use audioTrackIndex instead.")
+  public func getAudioTrackIndex() -> Swift.Int32
+  @objc @available(*, deprecated, message: "Please use audioDecoderType instead.")
+  public func getAudioDecoderType() -> MediaFlow.TMAudioDecoderTypes
+  @objc @available(*, deprecated, message: "Please use audioPlaybackEngineType instead.")
+  public func getAudioPlaybackEngineType() -> MediaFlow.TMAudioPlaybackEngineTypes
+  @objc @available(*, deprecated, message: "Please use contentID instead.")
+  public func getContentID() -> Swift.Int32
+  @objc @available(*, deprecated, message: "Please use estimatedPlaybackLatency instead.")
+  public func getEstimatedPlaybackLatencyInNanoseconds() -> Swift.Int64
+  @objc @available(*, deprecated, message: "Please use audioGain instead.")
+  public func getAudioGain() -> Swift.Float
+  @objc deinit
+}
+@objc public enum TMNRPTextureBlitModes : Swift.Int32 {
+  case Unknown = 0
+  case Default = 1
+  case UVShufflingZeroCopy = 2
+  case UVShufflingCopy = 3
+  case OVROverlayCopy = 4
+  case OVROverlayZeroCopy = 5
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TMLoggingConfiguration {
+  public init()
+  public static let CLEARVR_LOG_GLOBAL_FILE_NAME: Swift.String
+  public static let CLEARVR_LOG_RECORDER_FILE_NAME: Swift.String
+  public static var defaultLoggingConfiguration: MediaFlow.TMLoggingConfiguration {
+    get
+  }
+  @available(*, deprecated, message: "[ClearVR] This API will be removed after 30-04-2024. Please use defaultLogFolder instead.")
+  public static func GetDefaultLogFolder() -> Swift.String
+  public static var defaultLogFolder: Swift.String {
+    get
+  }
+  public var globalLogLevel: MediaFlow.TMLogLevels {
+    get
+    set(newVal)
+  }
+  public var globalLogFolder: Swift.String {
+    get
+    set(newVal)
+  }
+  public var globalLogFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var globalLogToMemory: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var globalLogToStderr: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var logNetwork: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var interactionRecorderFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var coreLogLevel: MediaFlow.TMLogLevels {
+    get
+    set(newVal)
+  }
+  public var coreLogFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var coreLogToMemory: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var coreLogToStderr: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var nrpLogLevel: MediaFlow.TMLogLevels {
+    get
+    set(newVal)
+  }
+  public var nrpLogFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var nrpLogToMemory: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var nrpLogToStderr: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var mfLogLevel: MediaFlow.TMLogLevels {
+    get
+    set(newVal)
+  }
+  public var mfLogFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var mfLogToMemory: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var mfLogToStderr: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var sdkLogLevel: MediaFlow.TMLogLevels {
+    get
+    set(newVal)
+  }
+  public var sdkLogFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var sdkLogToMemory: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var sdkLogToStderr: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var sigmaAudioLogLevel: MediaFlow.TMLogLevels {
+    get
+    set(newVal)
+  }
+  public var sigmaAudioLogFileName: Swift.String {
+    get
+    set(newVal)
+  }
+  public var sigmaAudioLogToMemory: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var sigmaAudioLogToStderr: Swift.Bool {
+    get
+    set(newVal)
+  }
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@objc public enum TMFishEyeLensTypes : Swift.Int32 {
+  case DefaultFisheyeLens = 0
+  case Equisolid = 1
+  case Equidistant = 2
+  case Polynomial = 3
+  public func getFishEyeLensType() -> MediaFlow.TMFishEyeLensTypes
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMFishEyeLensTypesBridge : ObjectiveC.NSObject {
+  @objc public static func getFishEyeLensType(argValue: Swift.Int32) -> MediaFlow.TMFishEyeLensTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum TMInteractionModes : Swift.CustomStringConvertible {
+  case Unknown
+  case OmniDirectional
+  case Planar
+  case Rectilinear
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: MediaFlow.TMInteractionModes, b: MediaFlow.TMInteractionModes) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OptionSetIterator<Element> : Swift.IteratorProtocol where Element : Swift.OptionSet, Element.RawValue == Swift.Int {
+  public init(element: Element)
+  public mutating func next() -> Element?
+}
+extension Swift.OptionSet where Self.RawValue == Swift.Int {
+  public func makeIterator() -> MediaFlow.OptionSetIterator<Self>
+}
+@objc public class TMAudioTrackProperties : ObjectiveC.NSObject {
+  public var audioTrackIndex: Swift.Int {
+    get
+  }
+  public var numberOfChannels: Swift.Int {
+    get
+  }
+  public var sampleRate: Swift.Int {
+    get
+  }
+  public var audioCodec: Swift.String {
+    get
+  }
+  public var isHoa: Swift.Bool {
+    get
+  }
+  public var hoaChannelOrder: Swift.String {
+    get
+  }
+  public var hoaGain: Swift.Float {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(argAudioTrackIndex: Swift.Int, argNumberOfChannels: Swift.Int, argSampleRate: Swift.Int, argAudioCodec: Swift.String, argIsHoa: Swift.Bool, argHoaChannelOrder: Swift.String, argHoaGain: Swift.Float)
+  @available(*, deprecated, message: "Please use audioTrackIndex instead.")
+  public func getAudioTrackIndex() -> Swift.Int
+  @available(*, deprecated, message: "Please use hoaGain instead.")
+  public func getHoaGain() -> Swift.Float
+  @available(*, deprecated, message: "Please use hoaChannelOrder instead.")
+  public func getHoaChannelOrder() -> Swift.String
+  @available(*, deprecated, message: "Please use isHoa instead.")
+  public func getIsHoa() -> Swift.Bool
+  @available(*, deprecated, message: "Please use audioCodec instead.")
+  public func getAudioCodec() -> Swift.String
+  @available(*, deprecated, message: "Please use sampleRate instead.")
+  public func getSampleRate() -> Swift.Int
+  @available(*, deprecated, message: "Please use numberOfChannels instead.")
+  public func getNumberOfChannels() -> Swift.Int
+  public func isEqualIgnoreAudioTrackIndex(argOtherAudioTrackProperties: MediaFlow.TMAudioTrackProperties?) -> Swift.Bool
+  @objc deinit
+}
+public enum TMClearVRSpaces {
+  case Local
+  case World
+  public static func == (a: MediaFlow.TMClearVRSpaces, b: MediaFlow.TMClearVRSpaces) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TMContentSupportedTester {
+  @objc deinit
+}
+@objc public enum TMAudioDecoderTypes : Swift.Int32 {
+  case Unknown = 0
+  case Internal = 1
+  public static func getAudioDecoderType(argValue: Swift.Int32) -> MediaFlow.TMAudioDecoderTypes
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMAudioDecoderTypesCBridge : ObjectiveC.NSObject {
+  @objc public static func getAudioDecoderType(argValue: Swift.Int32) -> MediaFlow.TMAudioDecoderTypes
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum TMClearVRAsyncRequestTypes : Swift.Int32 {
+  case Unknown = 0
+  case Initialize = 1
+  case ParseMediaInfo = 2
+  case PrepareContentForPlayout = 3
+  case Start = 4
+  case Pause = 5
+  case Unpause = 6
+  case Seek = 7
+  case Stop = 8
+  case SwitchAudioTrack = 9
+  case SwitchContent = 10
+  case ChangeStereoMode = 11
+  case CallCore = 13
+  case ContentSupportedTest = 14
+  case CallCoreStatic = 15
+  case ClearVRPlayerInitialize = 999
+  public func getName() -> Swift.String
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TMClearVRSubtitle {
+  public static let EMPTY_SUBTITLE: MediaFlow.TMClearVRSubtitle
+  public static func parseSubtitleMessageToClearVRSubtiltle(argClearVRMessage: MediaFlow.TMClearVRMessage) -> MediaFlow.TMClearVRSubtitle?
+  public func toString() -> Swift.String
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TMQuaternion : ObjectiveC.NSObject {
+  public var w: Swift.Double
+  public var x: Swift.Double
+  public var y: Swift.Double
+  public var z: Swift.Double
+  @objc override convenience dynamic public init()
+  public init(argW: Swift.Double, argX: Swift.Double, argY: Swift.Double, argZ: Swift.Double)
+  public func multiplyRightHanded(argOther: MediaFlow.TMQuaternion) -> MediaFlow.TMQuaternion
+  public var magnitude: Swift.Double {
+    get
+  }
+  public func quaternionToEulerZYX() -> MediaFlow.TMVector3
+  public func quaternionToEulerZYXInDegree() -> MediaFlow.TMVector3
+  public func conjugate() -> MediaFlow.TMQuaternion
+  public static func getQuaternionFromMatrix(argMatrix: GLKit.GLKMatrix4) -> MediaFlow.TMQuaternion
+  public func rotate(v: MediaFlow.TMVector3) -> MediaFlow.TMVector3
+  public func norm() -> Swift.Double
+  public func normalize()
+  public static func angleAxis(argAngleInDegrees: Swift.Float, argAxis: MediaFlow.TMVector3) -> MediaFlow.TMQuaternion
+  public static func angleAxis(argAngleInDegrees: Swift.Double, argAxis: MediaFlow.TMVector3) -> MediaFlow.TMQuaternion
+  public func copy() -> MediaFlow.TMQuaternion
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class TMClearVRAsyncRequest : ObjectiveC.NSObject {
+  public static let TM_REQUEST_ID_DO_NOT_FIRE_EVENT: Swift.Int32
+  @objc public var requestType: MediaFlow.TMClearVRAsyncRequestTypes
+  @objc public var requestId: Swift.UInt32
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMSwitchContentParameters : ObjectiveC.NSObject {
+  @objc public var contentItem: MediaFlow.TMContentItem
+  @objc public var timingParameters: MediaFlow.TMTimingParameters?
+  @objc public var transitionType: MediaFlow.TMTransitionTypes
+  @objc public var audioTrackAndPlaybackParameters: MediaFlow.TMAudioTrackAndPlaybackParameters?
+  @objc public var syncSettings: MediaFlow.TMSyncSettings?
+  @objc public var approximateDistanceFromLiveEdge: Swift.Int64
+  @objc public var layoutParameters: MediaFlow.TMLayoutParameters
+  @objc @available(*, deprecated, renamed: "layoutParameters.preferredAudioLanguage")
+  public var preferredAudioTrackLanguage: Swift.String
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor is obsolete and can no longer be used. Please update your code.")
+  convenience public init(argManifestUrl: Swift.String, argStartYaw: Swift.Double, argStartPitch: Swift.Double, argStartPositionInMilliseconds: Swift.Int64, argAudioDecoderType: MediaFlow.TMAudioDecoderTypes, argAudioPlaybackEngineType: MediaFlow.TMAudioPlaybackEngineTypes, argFlags: Swift.Int64)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor is obsolete and can no longer be used. Please update your code.")
+  convenience public init(argContentItem: MediaFlow.TMContentItem, argAudioTrackAndPlaybackParameters: MediaFlow.TMAudioTrackAndPlaybackParameters, argFlags: Swift.Int64)
+  @objc @available(swift, obsoleted: 1.0, message: "This constructor is obsolete and can no longer be used. Use SwitchContentParameters(TMContentItem, TMTImingParameters, TMLayoutParameters) instead.")
+  public init(argContentItem: MediaFlow.TMContentItem, argTimingParameters: MediaFlow.TMTimingParameters? = nil, argTransitionType: MediaFlow.TMTransitionTypes = TMTransitionTypes.Fast, argAudioTrackAndPlaybackParameters: MediaFlow.TMAudioTrackAndPlaybackParameters? = nil, argSyncSettings: MediaFlow.TMSyncSettings? = nil, argFlags: Swift.Int64 = 0, argApproximateDistanceFromLiveEdgeInMilliseconds: Swift.Int64 = 0, argPreferredAudioTrackLanguage: Swift.String = "")
+  @objc public init(contentItem: MediaFlow.TMContentItem, timingParameters: MediaFlow.TMTimingParameters?, layoutParameters: MediaFlow.TMLayoutParameters)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class TMCodecCapabilities : ObjectiveC.NSObject {
+  @objc public static var isHardwareHEVCDecoderAvailable: Swift.Bool {
+    @objc get
+  }
+  public static func getMimetypeByFuzzyMimetype(argClearVRCoreVideoCodecName: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TMVideoTrackInfo : ObjectiveC.NSObject {
+  final public let isActive: Swift.Bool
+  final public let feedIndex: Swift.Int32
+  public var trackIndex: Swift.Int32 {
+    get
+  }
+  public var width: Swift.Int32 {
+    get
+  }
+  public var height: Swift.Int32 {
+    get
+  }
+  public var framerateNum: Swift.Int32 {
+    get
+  }
+  public var framerateDenom: Swift.Int32 {
+    get
+  }
+  public var framerate: Swift.Float {
+    get
+  }
+  public var videoCodecType: MediaFlow.TMVideoCodecTypes {
+    get
+  }
+  public var contentFormat: MediaFlow.TMContentFormat {
+    get
+  }
+  public var drmType: MediaFlow.TMDRMTypes {
+    get
+  }
+  public var url: Swift.String {
+    get
+  }
+  public var bitrateInKbps: Swift.Int32 {
+    get
+  }
+  public var trackID: MediaFlow.TMTrackID {
+    get
+  }
+  public var aspectRatio: Swift.Float {
+    get
+  }
+  public var supportedStatus: MediaFlow.TMContentSupportedStatus {
+    get
+  }
+  public var qualityDescriptor: Swift.String {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public class TMTelemetryUpdateCustomData : ObjectiveC.NSObject {
+  public var telemetryUpdateTargetCustomData: [MediaFlow.TMTelemetryUpdateTargetCustomData]
+  public init(targetSpecificCustomMetadata: [MediaFlow.TMTelemetryUpdateTargetCustomData])
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public enum TMSyncModes : Swift.CustomStringConvertible {
+  case PlaybackRate
+  case Seek
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: MediaFlow.TMSyncModes, b: MediaFlow.TMSyncModes) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public enum TMABRStartModes : Swift.Int32 {
+  case Default
+  case Lowest
+  case Middle
+  case Highest
+  public func getValue() -> Swift.String
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMClearVRMessage : ObjectiveC.NSObject {
+  @objc public var clearVRMessageType: MediaFlow.TMClearVRMessageTypes
+  @objc public var code: Swift.Int32
+  @objc public var message: Swift.String
+  @objc public var isSuccess: Swift.Bool
+  @objc public init(argClearVRMessageType: MediaFlow.TMClearVRMessageTypes, argClearVRMessageCode: MediaFlow.TMClearVRMessageCodes, argMessage: Swift.String, argIsSuccess: Swift.Bool)
+  @objc public static var genericOKMessage: MediaFlow.TMClearVRMessage {
+    @objc get
+  }
+  @objc public static func genericOKMessage(overrideMessage: Swift.String) -> MediaFlow.TMClearVRMessage
+  @objc public static func genericWarningMessage(_ overrideMessage: Swift.String = "") -> MediaFlow.TMClearVRMessage
+  @objc public static var requestCanceledWarning: MediaFlow.TMClearVRMessage {
+    @objc get
+  }
+  @objc public static var genericFatalErrorMessage: MediaFlow.TMClearVRMessage {
+    @objc get
+  }
+  @objc public static func genericFatalErrorMessage(message: Swift.String) -> MediaFlow.TMClearVRMessage
+  @objc public var clearVRMessageCode: MediaFlow.TMClearVRMessageCodes {
+    @objc get
+  }
+  @objc public var clearVRCoreErrorCode: MediaFlow.TMClearVRCoreErrorCodes {
+    @objc get
+  }
+  @objc public var hasKnownClearVRMessageCode: Swift.Bool {
+    @objc get
+  }
+  @objc public var hasKnownClearVRCoreErrorCode: Swift.Bool {
+    @objc get
+  }
+  @objc public func parseAudioTrackChanged() -> MediaFlow.TMAudioTrackAndPlaybackParameters?
+  @objc public func parseVideoDecoderCapabilities() -> MediaFlow.TMVideoDecoderCapabilities?
+  public func parseStereoscopicModeChanged() -> MediaFlow.TMClearVRStereoscopicModes
+  public func parseClearVRSubtitle() -> MediaFlow.TMClearVRSubtitle?
+  @objc public func update(argClearVRMessageType: MediaFlow.TMClearVRMessageTypes, argClearVRMessageCode: MediaFlow.TMClearVRMessageCodes, argMessage: Swift.String, argIsSuccess: Swift.Bool)
+  @objc public func update(argClearVRMessageType: MediaFlow.TMClearVRMessageTypes, argClearVRCoreErrorCode: MediaFlow.TMClearVRCoreErrorCodes, argMessage: Swift.String, argIsSuccess: Swift.Bool)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMPrepareContentParameters : ObjectiveC.NSObject {
+  @objc public var contentItem: MediaFlow.TMContentItem
+  @objc public var timingParameters: MediaFlow.TMTimingParameters?
+  @objc public var layoutParameters: MediaFlow.TMLayoutParameters
+  @objc public var audioTrackAndPlaybackParameters: MediaFlow.TMAudioTrackAndPlaybackParameters? {
+    @objc get
+    @objc set
+  }
+  @objc public var timeout: Swift.Int32 {
+    @objc get
+    @objc set
+  }
+  @objc public var syncSettings: MediaFlow.TMSyncSettings?
+  @objc public var approximateDistanceFromLiveEdge: Swift.Int64
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc @available(swift, obsoleted: 1.0, message: "[ClearVR] This constructor is obsolete and cannot be used anymore. Use init(TMContentItem, TMTimingParameters, TMLayoutParameters) instead.")
+  convenience public init(argContentItem: MediaFlow.TMContentItem, argTimingParameters: MediaFlow.TMTimingParameters?, argSyncSettings: MediaFlow.TMSyncSettings?, argTimeoutInMilliseconds: Swift.Int32)
+  @objc @available(swift, obsoleted: 1.0, message: "[ClearVR] This constructor is obsolete and cannot be used anymore. Use init(TMContentItem, TMTimingParameters, TMLayoutParameters) instead.")
+  public init(argContentItem: MediaFlow.TMContentItem, argTimingParameters: MediaFlow.TMTimingParameters?, argAudioTrackAndPlaybackParameters: MediaFlow.TMAudioTrackAndPlaybackParameters?, argSyncSettings: MediaFlow.TMSyncSettings?, argTimeoutInMilliseconds: Swift.Int32 = 0, argApproximateDistanceFromLiveEdgeInMilliseconds: Swift.Int64 = 0, argPreferredAudioTrackLanguage: Swift.String = "")
+  @objc public init(contentItem: MediaFlow.TMContentItem, timingParameters: MediaFlow.TMTimingParameters?, layoutParameters: MediaFlow.TMLayoutParameters)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TMClearVRCoreWrapperStatistics {
+  @_hasMissingDesignatedInitializers public class TMVideoStatistics {
+    public var interFrameDecoderLatencyMean: Swift.Float
+    public var interFrameDecoderLatencyStandardDeviation: Swift.Float
+    public var interFrameRenderLatencyMean: Swift.Float
+    public var interFrameRenderLatencyStandardDeviation: Swift.Float
+    public var framesRendered: Swift.UInt64
+    public var framesDropped: Swift.UInt64
+    public var vsyncQuality: Swift.Float
+    public var frameReleaseQuality: Swift.Float
+    public var averageDecoderInputQueueSize: Swift.Float
+    public var averageDecoderOutputQueueSize: Swift.Float
+    public var endToEndFrameLatencyMean: Swift.Float
+    public var endToEndFrameLatencyStandardDeviation: Swift.Float
+    public var interFrameApplicationLatencyMean: Swift.Float
+    public var interFrameApplicationLatencyStandardDeviation: Swift.Float
+    public func getInterFrameRenderLatencyAsPrettyString() -> Swift.String
+    public func getInterFrameDecoderLatencyAsPrettyString() -> Swift.String
+    public func getEndToEndFrameLatencyAsPrettyString() -> Swift.String
+    public func getInterFrameApplicationLatencyAsPrettyString() -> Swift.String
+    public func getInterFrameRenderRateInFramesPerSecond() -> Swift.Float
+    public func getInterFrameDecoderRateInFramesPerSecond() -> Swift.Float
+    public func getInterFrameApplicationRateInFramesPerSecond() -> Swift.Float
+    public func getAllMetricsAsPrettyString() -> Swift.String
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers public class TMAudioStatistics {
+    public var framesRendered: Swift.Int64
+    public var framesDropped: Swift.Int64
+    public var playbackUnderrunCount: Swift.Int64
+    public func getAllMetricsAsPrettyString() -> Swift.String
+    @objc deinit
+  }
+  public var videoStatistics: MediaFlow.TMClearVRCoreWrapperStatistics.TMVideoStatistics
+  public var audioStatistics: MediaFlow.TMClearVRCoreWrapperStatistics.TMAudioStatistics
+  public var pipelineLatencyInNanoseconds: Swift.Int64
+  @objc deinit
+}
+extension UIKit.UIInterfaceOrientation {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class TMTimingReport : ObjectiveC.NSObject {
+  @objc public var clearVRMessage: MediaFlow.TMClearVRMessage {
+    get
+  }
+  @objc public var timingType: MediaFlow.TMTimingTypes {
+    get
+  }
+  @objc public var currentPosition: Swift.Int64 {
+    get
+  }
+  @objc public var lowerSeekBound: Swift.Int64 {
+    get
+  }
+  @objc public var upperSeekBound: Swift.Int64 {
+    get
+  }
+  @objc public var contentDuration: Swift.Int64 {
+    get
+  }
+  @objc public var eventType: MediaFlow.TMEventTypes {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public var isSuccess: Swift.Bool {
+    @objc get
+  }
+  @objc public var distanceFromUpperBound: Swift.Int64 {
+    @objc get
+  }
+  @objc @available(*, deprecated, message: "Please use clearVRMessage instead.")
+  public func getClearVRMessage() -> MediaFlow.TMClearVRMessage
+  @objc @available(*, deprecated, message: "Please use timingType instead.")
+  public func getTimingType() -> MediaFlow.TMTimingTypes
+  @objc @available(*, deprecated, message: "Please use currentPosition instead.")
+  public func getCurrentPositionInMilliseconds() -> Swift.Int64
+  @objc @available(*, deprecated, message: "Please use lowerSeekBound instead.")
+  public func getLowerSeekBoundInMilliseconds() -> Swift.Int64
+  @objc @available(*, deprecated, message: "Please use upperSeekBound instead.")
+  public func getUpperSeekBoundInMilliseconds() -> Swift.Int64
+  @objc @available(*, deprecated, message: "Please use contentDuration instead.")
+  public func getContentDurationInMilliseconds() -> Swift.Int64
+  @objc @available(*, deprecated, message: "Please use isSuccess instead.")
+  public func getIsSuccess() -> Swift.Bool
+  @objc @available(*, deprecated, message: "Please use distanceFromUpperBound instead.")
+  public func getDistanceFromUpperBoundInMilliseconds() -> Swift.Int64
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMViewportAndDisplayObjectPose : ObjectiveC.NSObject {
+  @objc @_inheritsConvenienceInitializers public class TMPose : ObjectiveC.NSObject {
+    public var position: MediaFlow.TMVector3
+    public var orientation: MediaFlow.TMQuaternion
+    @objc override convenience dynamic public init()
+    public init(argPosition: MediaFlow.TMVector3, argOrientation: MediaFlow.TMQuaternion)
+    @objc override dynamic public var description: Swift.String {
+      @objc get
+    }
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class TMDisplayObject : ObjectiveC.NSObject {
+    public var pose: MediaFlow.TMViewportAndDisplayObjectPose.TMPose
+    public var scale: MediaFlow.TMScale
+    @objc override convenience dynamic public init()
+    public init(argPose: MediaFlow.TMViewportAndDisplayObjectPose.TMPose, argScale: MediaFlow.TMScale)
+    @objc override dynamic public var description: Swift.String {
+      @objc get
+    }
+    @objc deinit
+  }
+  @objc public var viewportPose: MediaFlow.TMViewportAndDisplayObjectPose.TMPose
+  @objc public var displayObject: MediaFlow.TMViewportAndDisplayObjectPose.TMDisplayObject
+  @objc public init(argViewportPose: MediaFlow.TMViewportAndDisplayObjectPose.TMPose, argDisplayObject: MediaFlow.TMViewportAndDisplayObjectPose.TMDisplayObject)
+  @objc override convenience dynamic public init()
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMScaleCBridge : ObjectiveC.NSObject {
+  @objc public static func getAsScale(argX: Swift.Double, argY: Swift.Double, argZ: Swift.Double) -> MediaFlow.TMScale
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMVector3CBridge : ObjectiveC.NSObject {
+  @objc public static func getAsVector3(argX: Swift.Double, argY: Swift.Double, argZ: Swift.Double) -> MediaFlow.TMVector3
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMQuaternionCBridge : ObjectiveC.NSObject {
+  @objc public static func getAsQuaternion(argW: Swift.Double, argX: Swift.Double, argY: Swift.Double, argZ: Swift.Double) -> MediaFlow.TMQuaternion
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMPoseCBridge : ObjectiveC.NSObject {
+  @objc public static func getAsPose(argPosition: MediaFlow.TMVector3, argOrientation: MediaFlow.TMQuaternion) -> MediaFlow.TMViewportAndDisplayObjectPose.TMPose
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TMDisplayObjectCBridge : ObjectiveC.NSObject {
+  @objc public static func getAsDisplayObject(argPose: MediaFlow.TMViewportAndDisplayObjectPose.TMPose, argScale: MediaFlow.TMScale) -> MediaFlow.TMViewportAndDisplayObjectPose.TMDisplayObject
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum TMClearVRDRMLicenseServerTypes : Swift.Int32 {
+  case Unspecified
+  case DRMLicenseServerViaccessOrcaTokenbased
+  case DRMLicenseServerWidevineGeneric
+  public static func getClearVRDRMLicenseServerType(argValue: Swift.String) -> MediaFlow.TMClearVRDRMLicenseServerTypes
+  public func getValue() -> Swift.String
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMAudioCodecTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case unspecified = 0
+  case aacLc = 1
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMDRMTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case unspecified = 0
+  case tbd = 1
+  case none = 2
+  case hlsAes128 = 3
+  case hlsSampleAes = 4
+  case playready = 5
+  case widevine = 6
+  case fairplay = 7
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMProjectionTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case rectilinearMono = 0
+  case rectilinearStereoTopBottom = 1
+  case erp360Mono = 2
+  case erp360StereoTopBottom = 3
+  case erp180Mono = 4
+  case erp180StereoSideBySide = 5
+  case fisheyeMono = 6
+  case fisheyeStereoSideBySide = 7
+  case rectilinearStereoSideBySide = 8
+  case meshBoxMono = 9
+  case meshBoxStereo = 10
+  case unknown = 99
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMFisheyePresets : Swift.Int32, Swift.RawRepresentable {
+  case blackmagicUrsaMiniCanon8_15_8Mm
+  case blackmagicUrsaMiniCanon8_15_8Dot5Mm
+  case blackmagicUrsaMiniCanon8_15_9Mm
+  case blackmagicUrsaMiniCanon8_15_9Dot5Mm
+  case blackmagicUrsaMiniCanon8_15_10Mm
+  case blackmagicUrsaMiniCanon8_15_10Dot5Mm
+  case blackmagicUrsaMiniCanon8_15_11Mm
+  case blackmagicUrsaMiniCanon8_15_11Dot5Mm
+  case blackmagicUrsaMiniCanon8_15_12Mm
+  case blackmagicUrsaMiniCanon8_15_12Dot5Mm
+  case blackmagicUrsa12Kcanon8_15_8Mm_8K_16_9
+  case zcamk1ProIzugarMkx22Mft_3Dot25Mm
+  case zcamk2ProIzugarMkx200_3Dot8Mm
+  case redKomodo6Kcanon8_12_8Mm
+  case redVraptor8Kcanon8_15_8Mm
+  case redVraptor8Kcanon8_15_10Mm
+  case redVraptor8Kcanon8_15_13Mm
+  case custom
+  public typealias RawValue = Swift.String
+  public var rawValue: MediaFlow.TMFisheyePresets.RawValue {
+    get
+  }
+  public init(rawValue: MediaFlow.TMFisheyePresets.RawValue)
+}
+@objc public enum TMDisplayObjectClassTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case unknown = 0
+  case fullScreen = 1
+  case largePanel = 2
+  case smallPanel = 3
+  case thumbnail = 4
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMLogComponents : Swift.Int32, Swift.CustomStringConvertible {
+  case unknown = 0
+  case tmCore = 1
+  case nrp = 2
+  case mediaFlow = 3
+  case sdk = 4
+  case sigmaAudio = 5
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMVideoCodecProfiles : Swift.Int32, Swift.CustomStringConvertible {
+  case unknown = 0
+  case h265Main = 1
+  case h265Main10 = 2
+  case h265Main12 = 3
+  case h265MainStill = 4
+  case h265Main10Hdr10 = 5
+  case h265Main10Hdr10Plus = 6
+  case h264ConstrainedBaseline = 10
+  case h264Baseline = 11
+  case h264ExtendedProfile = 12
+  case h264Main = 13
+  case h264High = 14
+  case h264High10 = 15
+  case h264High422 = 16
+  case h264High444 = 17
+  case h264ConstrainedHigh = 18
+  case av1Main = 20
+  case av1High = 21
+  case av1Professional = 22
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMLogLevels : Swift.Int32, Swift.CustomStringConvertible {
+  case fatal = -2
+  case error = -1
+  case warn = 0
+  case info = 1
+  case debug = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMEventTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case vod = 0
+  case live = 1
+  case finishedLive = 2
+  case unknown = 3
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMTelemetryTargetTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case telemetryTargetNewRelic = 0
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMTelemetryIPSignallingTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case telemetryIpSignallingDisabled = 0
+  case telemetryIpSignallingMasked = 1
+  case telemetryIpSignallingFull = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum TMSDKTypes : Swift.Int32, Swift.CustomStringConvertible {
+  case unknown = 0
+  case unity = 1
+  case native = 2
+  case web = 3
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+extension MediaFlow.TMAudioPlaybackEngineTypes : Swift.Equatable {}
+extension MediaFlow.TMAudioPlaybackEngineTypes : Swift.Hashable {}
+extension MediaFlow.TMAudioPlaybackEngineTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMInitializeFlags : Swift.Equatable {}
+extension MediaFlow.TMInitializeFlags : Swift.Hashable {}
+extension MediaFlow.TMInitializeFlags : Swift.RawRepresentable {}
+extension MediaFlow.TMVideoCodecTypes : Swift.Equatable {}
+extension MediaFlow.TMVideoCodecTypes : Swift.Hashable {}
+extension MediaFlow.TMVideoCodecTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMAudioFocusChangedHandlingTypes : Swift.Equatable {}
+extension MediaFlow.TMAudioFocusChangedHandlingTypes : Swift.Hashable {}
+extension MediaFlow.TMAudioFocusChangedHandlingTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRMessageTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVRMessageTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVRMessageTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMContentFormat : Swift.Equatable {}
+extension MediaFlow.TMContentFormat : Swift.Hashable {}
+extension MediaFlow.TMColorSpaceStandards : Swift.Equatable {}
+extension MediaFlow.TMColorSpaceStandards : Swift.Hashable {}
+extension MediaFlow.TMColorSpaceStandards : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRMeshTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVRMeshTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVRMeshTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMTextureTypes : Swift.Equatable {}
+extension MediaFlow.TMTextureTypes : Swift.Hashable {}
+extension MediaFlow.TMTextureTypes : Swift.RawRepresentable {}
+@available(*, deprecated, message: "This enum has been deprecated and will be removed after 2023/01/31. It has been replaced by the TMFisheyePresets enum.")
+extension MediaFlow.TMFishEyeCameraAndLensTypes : Swift.Equatable {}
+@available(*, deprecated, message: "This enum has been deprecated and will be removed after 2023/01/31. It has been replaced by the TMFisheyePresets enum.")
+extension MediaFlow.TMFishEyeCameraAndLensTypes : Swift.Hashable {}
+@available(*, deprecated, message: "This enum has been deprecated and will be removed after 2023/01/31. It has been replaced by the TMFisheyePresets enum.")
+extension MediaFlow.TMFishEyeCameraAndLensTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMContentSupportedStatus : Swift.Equatable {}
+extension MediaFlow.TMContentSupportedStatus : Swift.Hashable {}
+extension MediaFlow.TMContentSupportedStatus : Swift.RawRepresentable {}
+extension MediaFlow.TMDisplayObjectDescriptorFlags : Swift.Equatable {}
+extension MediaFlow.TMDisplayObjectDescriptorFlags : Swift.Hashable {}
+extension MediaFlow.TMDisplayObjectDescriptorFlags : Swift.RawRepresentable {}
+extension MediaFlow.TMTransitionTypes : Swift.Equatable {}
+extension MediaFlow.TMTransitionTypes : Swift.Hashable {}
+extension MediaFlow.TMTransitionTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMDeviceTypes : Swift.Equatable {}
+extension MediaFlow.TMDeviceTypes : Swift.Hashable {}
+extension MediaFlow.TMDeviceTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVREventTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVREventTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVREventTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMMeshTextureModes : Swift.Equatable {}
+extension MediaFlow.TMMeshTextureModes : Swift.Hashable {}
+extension MediaFlow.TMMeshTextureModes : Swift.RawRepresentable {}
+extension MediaFlow.TMTimingTypes : Swift.Equatable {}
+extension MediaFlow.TMTimingTypes : Swift.Hashable {}
+extension MediaFlow.TMTimingTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRStereoscopicModes : Swift.Equatable {}
+extension MediaFlow.TMClearVRStereoscopicModes : Swift.Hashable {}
+extension MediaFlow.TMClearVRStereoscopicModes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRDisplayObjectEventTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVRDisplayObjectEventTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVRProxyTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVRProxyTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVRProxyTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRMessageCodes : Swift.Equatable {}
+extension MediaFlow.TMClearVRMessageCodes : Swift.Hashable {}
+extension MediaFlow.TMClearVRMessageCodes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRCoreErrorCodes : Swift.Equatable {}
+extension MediaFlow.TMClearVRCoreErrorCodes : Swift.Hashable {}
+extension MediaFlow.TMClearVRCoreErrorCodes : Swift.RawRepresentable {}
+extension MediaFlow.TMSyncStates : Swift.Equatable {}
+extension MediaFlow.TMSyncStates : Swift.Hashable {}
+extension MediaFlow.TMSyncStates : Swift.RawRepresentable {}
+extension MediaFlow.TMRenderModes : Swift.Equatable {}
+extension MediaFlow.TMRenderModes : Swift.Hashable {}
+extension MediaFlow.TMRenderModes : Swift.RawRepresentable {}
+extension MediaFlow.TMApplicationFocusAndPauseHandlingTypes : Swift.Equatable {}
+extension MediaFlow.TMApplicationFocusAndPauseHandlingTypes : Swift.Hashable {}
+extension MediaFlow.TMApplicationFocusAndPauseHandlingTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMNRPColorSpaces : Swift.Equatable {}
+extension MediaFlow.TMNRPColorSpaces : Swift.Hashable {}
+extension MediaFlow.TMNRPColorSpaces : Swift.RawRepresentable {}
+extension MediaFlow.TMNRPTextureBlitModes : Swift.Equatable {}
+extension MediaFlow.TMNRPTextureBlitModes : Swift.Hashable {}
+extension MediaFlow.TMNRPTextureBlitModes : Swift.RawRepresentable {}
+extension MediaFlow.TMFishEyeLensTypes : Swift.Equatable {}
+extension MediaFlow.TMFishEyeLensTypes : Swift.Hashable {}
+extension MediaFlow.TMFishEyeLensTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMInteractionModes : Swift.Equatable {}
+extension MediaFlow.TMInteractionModes : Swift.Hashable {}
+extension MediaFlow.TMClearVRSpaces : Swift.Equatable {}
+extension MediaFlow.TMClearVRSpaces : Swift.Hashable {}
+extension MediaFlow.TMAudioDecoderTypes : Swift.Equatable {}
+extension MediaFlow.TMAudioDecoderTypes : Swift.Hashable {}
+extension MediaFlow.TMAudioDecoderTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRAsyncRequestTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVRAsyncRequestTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVRAsyncRequestTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMSyncModes : Swift.Equatable {}
+extension MediaFlow.TMSyncModes : Swift.Hashable {}
+extension MediaFlow.TMABRStartModes : Swift.Equatable {}
+extension MediaFlow.TMABRStartModes : Swift.Hashable {}
+extension MediaFlow.TMABRStartModes : Swift.RawRepresentable {}
+extension MediaFlow.TMClearVRDRMLicenseServerTypes : Swift.Equatable {}
+extension MediaFlow.TMClearVRDRMLicenseServerTypes : Swift.Hashable {}
+extension MediaFlow.TMClearVRDRMLicenseServerTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMAudioCodecTypes : Swift.Equatable {}
+extension MediaFlow.TMAudioCodecTypes : Swift.Hashable {}
+extension MediaFlow.TMAudioCodecTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMDRMTypes : Swift.Equatable {}
+extension MediaFlow.TMDRMTypes : Swift.Hashable {}
+extension MediaFlow.TMDRMTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMProjectionTypes : Swift.Equatable {}
+extension MediaFlow.TMProjectionTypes : Swift.Hashable {}
+extension MediaFlow.TMProjectionTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMFisheyePresets : Swift.Equatable {}
+extension MediaFlow.TMFisheyePresets : Swift.Hashable {}
+extension MediaFlow.TMDisplayObjectClassTypes : Swift.Equatable {}
+extension MediaFlow.TMDisplayObjectClassTypes : Swift.Hashable {}
+extension MediaFlow.TMDisplayObjectClassTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMLogComponents : Swift.Equatable {}
+extension MediaFlow.TMLogComponents : Swift.Hashable {}
+extension MediaFlow.TMLogComponents : Swift.RawRepresentable {}
+extension MediaFlow.TMVideoCodecProfiles : Swift.Equatable {}
+extension MediaFlow.TMVideoCodecProfiles : Swift.Hashable {}
+extension MediaFlow.TMVideoCodecProfiles : Swift.RawRepresentable {}
+extension MediaFlow.TMLogLevels : Swift.Equatable {}
+extension MediaFlow.TMLogLevels : Swift.Hashable {}
+extension MediaFlow.TMLogLevels : Swift.RawRepresentable {}
+extension MediaFlow.TMEventTypes : Swift.Equatable {}
+extension MediaFlow.TMEventTypes : Swift.Hashable {}
+extension MediaFlow.TMEventTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMTelemetryTargetTypes : Swift.Equatable {}
+extension MediaFlow.TMTelemetryTargetTypes : Swift.Hashable {}
+extension MediaFlow.TMTelemetryTargetTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMTelemetryIPSignallingTypes : Swift.Equatable {}
+extension MediaFlow.TMTelemetryIPSignallingTypes : Swift.Hashable {}
+extension MediaFlow.TMTelemetryIPSignallingTypes : Swift.RawRepresentable {}
+extension MediaFlow.TMSDKTypes : Swift.Equatable {}
+extension MediaFlow.TMSDKTypes : Swift.Hashable {}
+extension MediaFlow.TMSDKTypes : Swift.RawRepresentable {}

@@ -1,0 +1,11 @@
+framework module MediaFlow {
+  umbrella header "MediaFlow.h"
+
+  export *
+  module * { export * }
+}
+
+module MediaFlow.Swift {
+  header "MediaFlow-Swift.h"
+  requires objc
+}

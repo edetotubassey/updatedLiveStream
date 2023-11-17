@@ -1,0 +1,17 @@
+{
+	"content_items": [
+		{
+			"description": "Bahrain ",
+			"sdk_content_item": {
+				"url": "https://destination-live-vr.s3.tebi.io/destination-cam1/cam1/manifest.json"
+			}
+		},
+		{
+			"description": "Bip Bop 4k (CCW)",
+			"sdk_content_item": {
+				"url": "https://destination-live-vr.s3.tebi.io/destination-cam1/cam1/manifest.json"
+			}
+		}
+	]
+}
+	

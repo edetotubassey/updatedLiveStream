@@ -1,0 +1,3 @@
+# Prevent Proguard from obfuscating/stripping the com.tiledmedia namespace on Android
+# The library relies on reflection in some instances, which would otherwise be removed.
+-keep class com.tiledmedia.** {*;}

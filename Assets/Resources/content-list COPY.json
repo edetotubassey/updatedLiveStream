@@ -1,0 +1,17 @@
+{
+	"content_items": [
+		{
+			"description" : "Bip Bop 4k (CW)",
+			"sdk_content_item": {
+				"url": "https://tiledmediademo-ns4.akamaized.net/auto/permanent/20180710_105817_BipBop_v3_CW_30p_x265_tm10_4096x2048p30.00_default/manifest.json"
+			}
+		},
+		{
+			"description" : "Bip Bop 4k (CCW)",
+			"sdk_content_item": {
+				"url": "https://tiledmediademo-ns4.akamaized.net/auto/permanent/20180710_111045_BipBop_v3_CCW_30p_x265_tm10_4096x2048p30.00_default/manifest.json"
+			}
+		}
+	]
+}
+	
